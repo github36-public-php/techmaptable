@@ -1,0 +1,1216 @@
+body 
+{
+padding: 0;
+margin: 0;
+background:url(images/main_background.jpg) no-repeat;
+width: 100%;
+height:100%;
+/* display: table; */
+font-family: Arial;
+font-size: 12px;
+}
+
+/* Цвет и тип границы для полей ввода */
+input,select
+{
+border: 1px solid #A1A1A1;
+}
+
+/* Отступ для полей ввода */
+input
+{
+padding-left:4px; 
+}
+
+
+
+.login_window
+{
+/* Позиционирование элемента */
+top: 50%; /* Отступ в процентах от верхнего края окна */
+left: 50%; /* Отступ в процентах от левого края окна */
+width:240px; /* Ширина блока */
+height: 120px; /* Высота блока */
+position: absolute; /* Абсолютное позиционирование блока */
+margin-top: -60px; /* Отрицательный отступ от верхнего края страницы, должен равняться половине ширины блока со знаком минус */
+margin-left: -120px; /* Отрицательный отступ от левого края страницы, должен равняться половине высоты блока со знаком минус */
+/* Оформление элемента */
+border: 4px solid #4d4d4d;
+background: #222222;
+text-decoration: none;
+vertical-align: middle;   
+padding:10px;
+}
+
+/* Текст заголовка формы */
+.login_window_title_text
+{
+font-family: Arial;
+font-size: 16px;
+color: #ffffff;
+font-weight: bold;
+text-align: center;
+margin-bottom:10px;
+}
+
+
+
+/* Элементы формы */
+.form_captions 
+{
+font-family:Arial;
+font-size: 12px;
+color: #ffffff;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+/* Поле ввода input */
+.form_field 
+{
+border: 0px solid #ffffff;
+background: #ffffff;
+color: #000000;
+padding:4px;
+width:170px;
+}
+.form_field:focus 
+{
+background: #ffffff;
+color: #000000;
+}
+
+
+/* Кнопка входа */
+.enter_button 
+{
+font-family:Arial;
+font-size:14px;
+color: #ffffff;
+border: 0px;
+padding: 4px 14px;
+text-decoration: none;
+vertical-align: middle;
+cursor:pointer;
+background:#006d94;
+}
+.enter_button:hover {background: #0087b8;}
+.enter_button:active {background: #0089B7;}
+
+/* Кнопка на форме */
+.form_button 
+{
+font-family:Arial;
+font-size:14px;
+color: #E6E6E6;
+border: 1px solid #B2B2B2;
+padding: 4px 14px;
+text-decoration: none;
+vertical-align: middle;
+cursor:pointer;
+background:#171A21;
+margin-top:0px;
+margin-left:10px;
+z-index:2;
+}
+.form_button:hover {background: #05547A; border: 1px solid #ffffff; color: #ffffff;}
+/* Позиция первой кнопки на форме (удираем отступ) */
+.first_form_button 
+{
+margin-left:0px;
+}
+
+
+
+/* Кнопка-ссылка на форме */
+a.form_link_button 
+{
+font-family:Arial;
+font-size:14px;
+color: #E6E6E6;
+border: 1px solid #B2B2B2;
+padding: 4px 14px;
+text-decoration: none;
+vertical-align: middle;
+cursor:pointer;
+background:#171A21;
+margin-top:0px;
+margin-left:10px;
+z-index:2;
+}
+
+/* Отключенная кнопка-ссылка на форме */
+a.form_disabled_link_button 
+{
+font-family:Arial;
+font-size:14px;
+color: #808080;
+border: 1px solid #292E3D;
+padding: 4px 14px;
+text-decoration: none;
+vertical-align: middle;
+background:#171A21;
+margin-top:0px;
+margin-left:10px;
+z-index:2;
+}
+a.form_link_button:hover {background: #05547A; border: 1px solid #ffffff; color: #ffffff;}
+/* Позиция первой кнопки на форме (убираем отступ) */
+a.first_form_link_button 
+{
+margin-left:0px;
+}
+/* Стиль для активной кнопки */
+a.form_link_button_active {background: #FFAC32; border: 1px solid #ffffff; color: #000000;}
+
+
+/* Стили для кнопок переключения страниц */
+a.form_paging_link_button 
+{
+margin-left:3px;
+}
+/* Позиция кнопок переключения страниц */
+.menu_paging_right_position
+{
+position: absolute;
+top:0px;
+right:18px;
+z-index:3;
+}
+
+
+
+
+
+/* Кнопка-ссылка для переключения даты (вперёд-назад) на форме расписания */
+a.data_date_link_button 
+{
+font-family:Tahoma;
+font-size:12px;
+color: #000000;
+border: 1px solid #BFBFBF;
+padding: 2px 4px;
+text-decoration: none;
+cursor:pointer;
+background:#D9D9D9;
+margin-top:0px;
+margin-left:2px; 
+z-index:2;
+}
+a.data_date_link_button:hover {background: #CCCCCC;}
+
+
+
+/* Главное меню - позиция пунктов меню */
+.main_menu 
+{
+position:absolute;
+top: 0px; 
+min-width: 100%;
+height: 44px; /* Высота меню - расположение текста+высота таблицы подчеркивания */
+/* background: #222222; */
+/* background: #153351; */
+line-height: 40px; /* Текст по центру - по вертикали */
+white-space: nowrap;
+display: inline-block;
+/* opacity: 0.9; */
+z-index:2;
+}
+
+/* Главное меню - фон меню */
+.main_menu_background
+{
+left: 0px; 
+position:absolute;
+top: 0px; 
+min-width: 100%;
+height: 44px; /* Высота меню - расположение текста+высота таблицы подчеркивания */
+background: #171A21;
+display: inline-block; 
+/* opacity: 0.8; */
+z-index:1;
+}
+
+/* Отступ элемента главного меню */
+a.main_menu_link
+{
+margin-left:20px;
+position: relative; /* Для подчеркивания */
+}
+
+/* Первый пункт меню (общего) без отступа */
+a.first_menu_link
+{
+margin-left:0px;
+}
+
+
+
+/* Меню действий - позиция пунктов меню */
+.action_menu 
+{
+position:absolute;
+bottom: 0px; 
+min-width: 100%;
+height: 44px; /* Высота меню - расположение текста+высота таблицы подчеркивания */
+line-height: 40px; /* Текст по центру - по вертикали */
+white-space: nowrap;
+display: inline-block;
+/* opacity: 0.9; */
+z-index:2;
+}
+
+/* Меню действий - фон меню */
+.action_menu_background
+{
+left: 0px; 
+position:absolute;
+bottom: 0px; 
+min-width: 100%;
+height: 44px; /* Высота меню - расположение текста+высота таблицы подчеркивания */
+background: #171A21;
+display: inline-block; 
+/* opacity: 0.9; */
+z-index:1;
+}
+
+
+
+
+
+
+/* Элемент (ссылка) главного меню */
+a.main_menu_link:link {font-size:14px;color:#CCCCCC;font-family:Arial;text-decoration:none;letter-spacing:0.5px;}
+a.main_menu_link:visited {font-size:14px;color:#CCCCCC;font-family:Arial;text-decoration:none;letter-spacing:0.5px;}
+a.main_menu_link:hover {font-size:14px;color:#ffffff;font-family:Arial;text-decoration:none;letter-spacing:0.5px;}
+a.main_menu_active_link:link {font-size:14px;color:#FFAC32;font-family:Arial;text-decoration:none;letter-spacing:0.5px;}
+a.main_menu_active_link:visited {font-size:14px;color:#FFAC32;font-family:Arial;text-decoration:none;letter-spacing:0.5px;}
+a.main_menu_active_link:hover {font-size:14px;color:#FFAC32;font-family:Arial;text-decoration:none;letter-spacing:0.5px;}
+
+/* Подчеркивание активной ссылки меню */
+.main_menu_active_link_underlined::after 
+{
+content: "";
+position: absolute;
+bottom: -15px;
+left: 0px;
+width: 100%;
+height: 3px;
+background: #FFAC32
+}
+
+
+/* Разделитель главного меню */
+.main_menu_separator {margin-left:20px; font-size:14px;color:#808080;font-family:Arial;text-decoration:none; white-space: nowrap;
+display: inline-block;}
+
+
+
+
+/* Окно расписания в админцентре (особое отдельное окно) */
+.schedule_window
+{
+/* Позиционирование элемента */
+position: absolute;
+top: 50px;
+left: 14px;
+width: 96%;
+height: 84%;
+/* Оформление элемента */
+border: 4px solid #BFBFBF;
+background: #ffffff;
+text-decoration: none;
+vertical-align: middle;   
+padding:10px;
+/* Шрифты по умолчанию в элементе определяются шрифтами в body*/
+}
+
+/* Прокрутка окна расписания */
+.data_window_scrolling
+{
+overflow-x: auto;
+overflow-y: scroll;
+width: 100%;
+height: 74%;
+background-color:#ffffff;
+}
+
+
+
+
+/* Окно направлений в админцентре (особое отдельное окно) */
+.referrals_window
+{
+/* Позиционирование элемента */
+position: absolute;
+top: 50px;
+left: 14px;
+width: 96%;
+height: 84%;
+/* Оформление элемента */
+border: 4px solid #BFBFBF;
+background: #ffffff;
+text-decoration: none;
+vertical-align: middle;   
+padding:10px;
+/* Шрифты по умолчанию в элементе определяются шрифтами в body*/
+}
+
+/* Прокрутка окна расписания */
+.referrals_list_window_scrolling
+{
+overflow-x: auto;
+overflow-y: scroll;
+width: 100%;
+height: 74%;
+background-color:#ffffff;
+}
+
+
+
+.registers_window
+{
+/* Позиционирование элемента */
+position: absolute;
+top: 50px;
+left: 14px;
+width: 96%;
+height: 84%;
+/* Оформление элемента */
+border: 4px solid #BFBFBF;
+background: #ffffff;
+text-decoration: none;
+vertical-align: middle;   
+padding:10px;
+/* Шрифты по умолчанию в элементе определяются шрифтами в body*/
+}
+
+/* Прокрутка окна расписания */
+.registers_list_window_scrolling
+{
+overflow-x: auto;
+overflow-y: scroll;
+width: 100%;
+height: 74%;
+background-color:#ffffff;
+}
+
+/* Окно реестров (особое отдельное окно) */
+
+/*
+.registers_window
+{
+
+position: absolute;
+top: 50px;
+left: 14px;
+width: 96%;
+height: 74%;
+
+border: 4px solid #BFBFBF;
+background: #ffffff;
+text-decoration: none;
+vertical-align: middle;   
+padding:10px;
+
+}
+
+
+.registers_list_window_scrolling
+{
+overflow-x: auto;
+overflow-y: scroll;
+width: 100%;
+height: 74%;
+background-color:#ffffff;
+}
+*/
+
+/* Текст итого */
+.registers_summary_tr
+{
+background: #E6E6E6;
+}
+
+
+
+/* Окно в админцентре */
+.main_window
+{
+/* Позиционирование элемента */
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+/* Оформление элемента */
+border: 4px solid #BFBFBF;
+background: #ffffff;
+text-decoration: none;
+vertical-align: middle;   
+padding:10px;
+/* Шрифты по умолчанию в элементе определяются шрифтами в body*/
+}
+/* Отступ контента сверху (от меню) */
+.main_window_menu_padding
+{
+padding-top: 54px;
+}
+
+
+
+
+/* Текст заголовка окна в админцентре */
+.main_window_title_text
+{
+font-family: Arial;
+font-size: 18px;
+color: #222222;
+margin-bottom:10px;
+}
+
+
+
+/* Правая позиция элемента в меню */
+.menu_right_position
+{
+position: absolute;
+top:10px;
+right:10px;
+}
+
+/* Правая позиция текста в меню */
+.menu_right_position_text
+{
+position: absolute;
+top:14px;
+right:100px;
+font-family: Arial;
+font-size: 14px;
+color: #cccccc;
+z-index:3;
+}
+
+
+
+/* Таблица на странице с возможностью чередованием цветов ряда (alt tr) */
+.page_table table { border-collapse: collapse; text-align: left; width: 100%; } .page_table {font: normal 12px/150% Arial, Helvetica, sans-serif; background: #fff; overflow: hidden; border: 1px solid #BFBFBF; }.page_table table td, .page_table table th { padding: 8px 8px; }.page_table table thead th {background-color:#D9D9D9; color:#000000; font-size: 12px; font-weight: bold; border-left: 1px solid #BFBFBF; } .page_table table thead th:first-child { border: none; }.page_table table tbody td { color: #000000; border-left: 1px solid #BFBFBF;font-size: 12px;border-bottom: 1px solid #BFBFBF;font-weight: normal; }.page_table table tbody .alt td { background: #C4D5D5; color: #000000; }.page_table table tbody td:first-child { border-left: none;}.page_table table tbody tr:last-child td { border-bottom: none; }
+
+
+.date_table table { border-collapse: collapse;  width: 100%;}
+.date_table table tbody th { padding: 10px 10px; background-color:#F7CB88; color:#000000; font-size: 12px; font-weight: bold; 
+border-top: 4px solid #FFAC32; 
+border-left: 1px solid #BFBFBF; 
+border-right: 1px solid #BFBFBF; 
+border-bottom: 1px solid #BFBFBF; 
+/*
+border-bottom: 1px solid #BFBFBF;  */
+}
+
+/* Начинаем предложение с большой буквы  */
+.date_table table tbody th:first-letter {text-transform: uppercase ;}
+ 
+ 
+.simple_table table { border-collapse: collapse; text-align: left; width: 100%; } .simple_table {font: normal 12px Arial, Helvetica, sans-serif; background: #fff; overflow: hidden; border: 1px solid #BFBFBF; }.simple_table table td, .simple_table table thead th {background-color:#D9D9D9; color:#000000; font-size: 12px; font-weight: bold; border-left: 1px solid #BFBFBF; } .simple_table table thead th:first-child { border: none; }.simple_table table tbody td { color: #000000; font-size: 12px;font-weight: normal; }
+
+.simple_table table td {
+border-left: initial;
+}
+
+/* Подсветка рядов таблицы при наведении мышки */
+.page_table tr:hover {background: #F7D5A2;}
+/* Подсветка последней отредактируемой ячейки */
+.page_table table tbody .edited_element td {background: #D1E3FA; animation: fadein 2s;}
+/* Общие настройки подсветки */
+@keyframes fadein {from {opacity:0;}to{opacity:1;}}
+@-moz-keyframes fadein { /* Firefox */ from {opacity:0;}to{opacity:1;}}
+@-webkit-keyframes fadein { /* Safari and Chrome */ from {opacity:0;}to{opacity:1;}}
+@-o-keyframes fadein { /* Opera */ from {opacity:0;}to{opacity: 1;}}
+
+
+
+
+.datagrid table { border-collapse: collapse; text-align: left; width: 100%; } .datagrid {font: normal 12px/150% Arial, Helvetica, sans-serif; background: #fff; overflow: hidden; border: 1px solid #BFBFBF; }.datagrid table td, .datagrid table th { padding: 8px 8px; }.datagrid table thead th {background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #D9D9D9), color-stop(1, #D9D9D9) );background:-moz-linear-gradient( center top, #D9D9D9 5%, #D9D9D9 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#D9D9D9', endColorstr='#D9D9D9');background-color:#D9D9D9; color:#000000; font-size: 12px; font-weight: bold; border-left: 1px solid #BFBFBF; } .datagrid table thead th:first-child { border: none; }.datagrid table tbody td { color: #000000; border-left: 1px solid #BFBFBF;font-size: 12px;border-bottom: 1px solid #BFBFBF;font-weight: normal; }.datagrid table tbody .alt td { background: #C4D5D5; color: #000000; }.datagrid table tbody td:first-child { border-left: none; }.datagrid table tbody tr:last-child td { border-bottom: none; }
+
+/* Ссылки в таблице */
+a.table_link:link, a.table_link:visited {font-size:12px;color:#000000;font-family:Arial;margin-left:10px;}
+a.table_link:hover {font-size:12px;color:#053148;font-family:Arial;margin-left:10px;}
+a.table_link {text-decoration: none; border-bottom: 1px dotted #000000;}
+
+/* Позиция первой ссылки в таблице */
+a.first_table_link:link
+{
+margin-left:0px;
+}
+
+
+
+
+
+/* СТИЛИ ОКОН */  
+
+/* Окно модуля - Страховые компании */ 
+.companies_window
+{
+width: 800px;
+height: 400px;
+}
+/* Скроллинг для окна -  Страховые компании */ 
+.companies_window_scrolling
+{
+overflow-x: auto ;
+overflow-y: auto;
+width: 100%;
+height:356px;
+}
+
+
+/* Стили окон страховых компаний */ 
+.add_company_window
+{
+width: 470px;
+height: 100px;
+}
+
+.edit_company_window
+{
+width: 470px;
+height: 100px;
+}
+.delete_company_window
+{
+width: 500px;
+height: 160px;
+line-height: 1.5;
+}
+
+
+/* Окно модуля - Администрирование системы */ 
+.administration_window
+{
+width: 1000px;
+height: 400px;
+}
+
+/* Стили окон пользователей */  
+.add_user_administration_window
+{
+width: 460px;
+height: 220px;
+}
+.edit_user_administration_window
+{
+width: 460px;
+height: 240px;
+}
+.delete_user_administration_window
+{
+width: 460px;
+height: 160px;
+line-height: 1.5;
+}
+
+/* Стили окон групп */  
+.add_group_administration_window
+{
+width: 460px;
+height: 250px;
+}
+.edit_group_administration_window
+{
+width: 460px;
+height: 250px;
+}
+.delete_group_administration_window
+{
+width: 440px;
+height: 160px;
+line-height: 1.5;
+}
+
+
+/* Окно модуля - Врачи */ 
+.doctors_window
+{
+width: 800px;
+height: 400px;
+}
+/* Скроллинг для окна - Врачи */ 
+.doctors_window_scrolling
+{
+overflow-x: auto ;
+overflow-y: auto;
+width: 100%;
+height:356px;
+}
+/* Скроллинг для окна - Медсестры */ 
+.nurses_window_scrolling
+{
+overflow-x: auto ;
+overflow-y: auto;
+width: 100%;
+height:356px;
+}
+
+/* Стили окон специальностей врача */ 
+.add_doctor_specialty_window
+{
+width: 380px;
+height: 70px;
+}
+.edit_doctor_specialty_window
+{
+width: 380px;
+height: 70px;
+}
+.delete_doctor_specialty_window
+{
+padding-right:14px;
+/* min-width: 440px; */
+height: 160px;
+line-height: 1.5;
+}
+
+
+/* Стили окон отделения */ 
+.add_doctor_department_window
+{
+width: 480px;
+height: 70px;
+}
+.edit_doctor_department_window
+{
+width: 480px;
+height: 70px;
+}
+.delete_doctor_department_window
+{
+padding-right:14px;
+height: 160px;
+line-height: 1.5;
+}
+.department_name_input{width:320px;}
+
+
+/* Стили окон списка врачей */ 
+.add_doctor_window
+{
+min-width: 300px;
+height: 150px;
+}
+.edit_doctor_window
+{
+min-width: 300px;
+height: 150px;
+}
+.delete_doctor_window
+{
+width: 500px;
+height: 160px;
+line-height: 1.5;
+}
+
+/* Стили окон списка медсестер */ 
+.add_nurse_window
+{
+min-width: 300px;
+height: 150px;
+}
+.edit_nurse_window
+{
+min-width: 300px;
+height: 150px;
+}
+.delete_nurse_window
+{
+width: 500px;
+height: 160px;
+line-height: 1.5;
+}
+
+/* Окно модуля - Пациенты */ 
+.patients_window
+{
+width: 800px;
+height: 400px;
+}
+/* Скроллинг для окна - Пациенты */ 
+.patients_window_scrolling
+{
+overflow-x: auto ;
+overflow-y: auto;
+width: 100%;
+height:356px;
+}
+
+
+/* Стили окон списка пациентов */ 
+.add_patient_window
+{
+min-width: 340px;
+height: 230px;
+}
+.edit_patient_window
+{
+min-width: 340px;
+height: 230px;
+}
+.delete_patient_window
+{
+width: 500px;
+height: 160px;
+line-height: 1.5;
+}
+
+/* Окно модуля - Услуги */ 
+.services_window
+{
+width: 1000px;
+height: 400px;
+}
+/* Скроллинг для окна - Услуги */ 
+.services_window_scrolling
+{
+overflow-x: auto;
+overflow-y: auto;
+width: 100%;
+height:356px;
+}
+
+
+/* Стили окон услуг */ 
+.add_service_window
+{
+min-width: 500px;
+height: 170px;
+}
+.edit_service_window
+{
+min-width: 500px;
+height: 170px;
+}
+.delete_service_window
+{
+width: 500px;
+height: 160px;
+line-height: 1.5;
+}
+
+
+
+
+
+
+
+
+/* Окно модуля - Расписание */ 
+.schedule_window
+{
+width: 96%;
+height: 80%;
+}
+
+/* Стили окон расписания */ 
+.add_schedule_window
+{
+width: 540px;
+height: 90px;
+}
+.edit_schedule_window
+{
+width: 540px;
+height: 90px;
+}
+.delete_schedule_window
+{
+width: 600px;
+height: 160px;
+line-height: 1.5;
+}
+.delete_all_schedule_window
+{
+/* width: 600px; */
+padding-right:14px;
+height: 160px;
+line-height: 1.5;
+}
+.duplicate_schedule_window
+{
+/* width: 500px; */
+height: 100px;
+}
+.duplicate_doctor_window
+{
+/* width: 500px; */
+height: 100px;
+}
+
+
+/* Стили окон пунктов расписания */ 
+.add_schedule_element_window
+{
+min-width: 650px;
+min-height: 215px;
+}
+.edit_schedule_element_window
+{
+min-width: 650px;
+height: 200px;
+}
+.delete_schedule_element_window
+{
+
+/* min-width: 400px; */
+height: 140px;
+line-height: 1.5;
+}
+
+
+.schedule_header
+{
+text-align: center;
+}
+
+.schedule_font
+{
+font-weight: bold;
+}
+
+
+
+
+
+/* Окно модуля - Направления */ 
+.referrals_window
+{
+width: 96%;
+height: 80%;
+}
+
+/* Стили окон направления */ 
+.add_referral_window
+{
+width: 650px;
+height: 115px;
+}
+.edit_referral_window
+{
+width: 600px;
+height: 115px;
+}
+
+.delete_referral_window
+{
+width: 600px;
+height: 160px;
+line-height: 1.5;
+}
+.delete_all_referrals_window
+{
+/* width: 600px; */
+padding-right:14px;
+height: 160px;
+line-height: 1.5;
+}
+
+
+
+/* Стили окон пунктов направлений */ 
+.add_referral_element_window
+{
+min-width: 750px;
+min-height: 210px;
+}
+.edit_referral_element_window
+{
+min-width: 650px;
+height: 200px;
+}
+.delete_referral_element_window
+{
+height: 140px;
+line-height: 1.5;
+}
+
+
+
+
+
+
+
+/* Маленькая кнопка-ссылка в расписаниии */
+a.schedule_small_link_button 
+{
+font-family:Arial;
+font-size:11px;
+color: #E6E6E6;
+border: 1px solid #B2B2B2;
+padding: 4px 14px;
+text-decoration: none;
+vertical-align: middle;
+cursor:pointer;
+background:#437089;
+margin-top:0px;
+margin-left:10px;
+z-index:2;
+}
+a.schedule_small_link_button:hover {background: #05547A; border: 1px solid #ffffff; color: #ffffff;}
+
+
+
+/* Позиция кнопок-ссылок в расписании */
+.schedule_header_buttons_position {
+position: relative;
+}
+.schedule_header_buttons_position div {
+position: absolute; 
+top: 9px; 
+right: 12px;
+}
+
+.day_buttons_right_position {
+position: relative;
+}
+.day_buttons_right_position div {
+position: absolute; 
+top: 12px; 
+right: 12px;
+}
+
+
+.day_buttons_left_position {
+position: relative;
+}
+.day_buttons_left_position div {
+position: absolute;
+top: 12px; 
+left: 0;
+}
+
+
+
+
+/* Шрифт специальности в меню расписания */ 
+.schedule_specialty_font 
+{
+font-family:Arial;
+font-size:11px;
+text-transform:lowercase;
+color: #000000;
+}
+
+.schedule_small_font 
+{
+font-family:Arial;
+font-size:11px;
+text-transform:lowercase;
+color: #000000;
+}
+
+
+
+
+
+
+/* Шрифт специальности в меню расписания */ 
+.schedule_empty_element_font 
+{
+font-family:Arial;
+font-size:11px;
+text-transform:lowercase;
+color: #4C4C4C;
+}
+
+
+
+
+
+
+
+
+
+/* Картинка календаря */ 
+.ui-datepicker-trigger 
+{
+/* vertical-align: text-top; */
+position: relative;
+top:3px;
+cursor: pointer;
+margin-left: -17px;
+}
+
+
+
+
+.colored_optgroup
+{
+background:#C4D5D5;
+}
+
+.colored_option
+{
+background:#C4D5D5;
+}
+
+
+.colored_tr
+{
+background:#C4D5D5;
+}
+
+
+
+
+/* Стили автозаполнения */
+.autocomplete_search_list
+{float:left;list-style:none;margin-top:0px;padding:0px;position:absolute;z-index:3;
+border: 1px solid #799BD2; 
+max-height: 200px;
+overflow-y: scroll;
+}
+
+
+.autocomplete_search_list li{padding:4px; background: #E6E6E6;border-bottom: #bbb9b9 1px solid;}
+.autocomplete_search_list li:hover{background:#F7D5A2;cursor: pointer;}
+
+
+/* Поле выбора пациента */
+.patients_search_box{min-width: 300px;}
+
+/* Поле выбора услуги врача */
+.doctors_service_search_box{min-width: 350px;}
+
+/* Поле выбора врача */
+.doctors_search_box{min-width: 350px;}
+
+
+/* Поле выбора компании */
+.companies_service_search_box{min-width: 200px;}
+
+/* Поле выбора кода услуги врача */
+.doctors_service_code_search_box
+{
+width: 80px;
+}
+
+/* .schedule_buttons_right_position
+{
+position: absolute;
+top:70px;
+right:10px;
+z-index:3;
+} */
+
+
+/* Фильтр в верхней строке (блок отображение даты, специальностей, врачей и т.д.) */
+.data_filters
+{
+position: relative;
+height: 30px;
+}
+
+
+
+/* Общий вид поля для ввода даты */
+.date_input
+{
+width:90px;
+padding-left:2px;
+}
+
+/* Поле выбора услуги */
+.service_select
+{
+width: 300px;
+}
+
+
+
+.clear_input
+{
+/*  position: relative;   */
+/* z-index:3;  */
+display: inline;
+top:0px;
+cursor: pointer;
+font-family:Tahoma;
+font-size:14px;
+font-weight:bold;
+color:#000000;
+	
+/* width: 100px;
+height: 10px; */
+}
+
+
+.clear_input_wrapper
+{
+display: inline;
+position: relative; 
+top:0px;
+right:16px; 
+
+/* border: 1px solid #A1A1A1;  */
+
+
+
+}
+
+
+
+
+
+
+
+
+#page_preloader{
+position: fixed;
+left: 0;
+top: 0;
+right:0;
+bottom:0;
+background: #34659F;
+z-index: 30;}
+ 
+.contpre small{font-size:25px;}
+ 
+.contpre{
+width: 250px;
+height: 100px;
+position: absolute;
+left: 50%;top: 48%;
+margin-left:-125px;
+margin-top:-75px;
+color:#fff;
+font-size:40px;
+letter-spacing:-2px;
+text-align:center;
+line-height:35px;}
+ 
+#page_preloader .svg_anm {
+position: absolute;
+width: 41px;
+height: 41px;
+background: url(images/oval.svg) center center no-repeat;
+background-size:41px;    
+margin: -16px 0 0 -16px;}
+
+
+
+
+.help_container
+{
+/* Позиционирование элемента */
+top: 2%; /* Отступ в процентах от верхнего края окна */
+left: 50%; /* Отступ в процентах от левого края окна */
+width:400px; /* Ширина блока */
+height: 120px; /* Высота блока */
+position: absolute; /* Абсолютное позиционирование блока */
+
+margin-left: -200px; /* Отрицательный отступ от левого края страницы, должен равняться половине высоты блока со знаком минус */
+/* Оформление элемента */
+border: 4px solid #4d4d4d;
+background: #FFFF33;
+text-decoration: none;
+vertical-align: middle;   
+padding:6px;
+}

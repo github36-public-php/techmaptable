@@ -1,0 +1,129 @@
+<?php
+include_once __DIR__.'/../classes/classes.php';
+
+// Скрипт доступен только администраторам.
+Security::AccessAdminOnly();
+
+// $templateArgumentsArray[0] передается (действие для формы) но не используется. Опция временно оставлена.
+
+// Получаем данные.
+$section=Data::GET('section');
+
+// Устанавливаем значения элементов формы.
+//Создание нового адреса
+if ($section=='address_add')
+{
+$formAction = 'actions.php?action=address_add';
+$formTitle = 'Создать новый адрес';
+$buttonText = 'Создать адрес';
+}
+
+// Редактирование текущего адреса.
+if ($section=='address_edit')
+{
+$formAction = 'actions.php?action=address_edit';
+$formTitle = 'Редактировать адрес';
+$buttonText = 'Редактировать адрес';
+
+
+// Получаем данные.
+$id=Data::GET('id');
+$addressRowArray = Address::GetAddressRow($id);
+$id = $addressRowArray['id'];
+$users_id = $addressRowArray['users_id'];
+$field1 = $addressRowArray['field1'];
+// Создаем массив из строки.
+$UsersIdArray = explode(",", $users_id);
+
+//echo $users_id ;
+}
+
+?>
+
+
+
+<form action="<?=$formAction?>" method="POST">
+<div class="panel__content_address_form">
+<div class="panel__content_address_form_content">
+
+
+<div class="panel__content_address_form_grid">
+<div class="panel__content_address_form_grid__header form__header">
+<?=$formTitle?>
+</div>
+
+<input value="<?=$id?>" type="hidden" name="id">
+
+<label class="panel__content_address_form_grid__address-label form__label this__selectable_none">
+Адрес
+</label>
+<input class="panel__content_address_form_grid__address-input form__input-type-text" value="<?=$field1?>" type="text" name="field1">
+
+
+<div class="panel__content_address_form_grid__user_list_header form__header">
+Список пользователей имеющих полный доступ к данному адресу (администраторы имеют доступ ко всем адресам)
+</div>
+
+<div class="panel__content_address_form_grid__user_list_list">
+
+<table class="user_list_table">
+<thead>
+<tr>
+<th>Логин</th><th>Роль</th><th>Фамилия</th><th>Имя</th><th>Отчество</th><th>Описание</th><th>Доступ</th>
+</tr>
+</thead>
+<tbody>
+<?php
+$UserListArray = User::GetUserList();
+if ($UserListArray != 'no_data')
+{
+$i=0;
+foreach ($UserListArray as $UserListElement)
+{
+$id = $UserListArray[$i]['id'];
+$login = $UserListArray[$i]['login'];
+$user_role = $UserListArray[$i]['user_role'];
+$user_name = $UserListArray[$i]['user_name'];
+$user_surname = $UserListArray[$i]['user_surname'];
+$user_patronymic = $UserListArray[$i]['user_patronymic'];
+$user_description = $UserListArray[$i]['user_description'];
+
+// Устанавливаем чекбокс
+$checkbox_checked='';
+if ($UsersIdArray != NULL)
+{
+foreach ($UsersIdArray as $UsersIdElement)
+{
+if ($id == $UsersIdElement) {$checkbox_checked='checked'; break;}
+}
+}
+
+if ($user_role != 'Администратор') echo '<tr><td>'.$login.'</td><td>'.$user_role.'</td><td>'.$user_surname.'</td><td>'.$user_name.'</td><td>'.$user_patronymic.'</td><td>'.$user_description.'</td>
+<td class="action" align="center">
+<input type="checkbox" name="users_id[]"  value="'.$id.'" '.$checkbox_checked.'>
+</td></tr>';
+
+
+$i++;
+}
+}
+?>
+</tbody>
+</table>
+
+</div>
+
+
+
+</div>
+</div>
+<div class="panel__content_address_form_bottom_menu">
+<?php
+// Нижнее меню панели.
+$panelBottomMenuArray[0] =  ['panel__button panel__button-left','index.php?page=admin&section=address', 'Назад'];
+$panelBottomMenuArray[1] =  ['submit_href panel__button panel__button-left','', $buttonText];
+echo HTML::ShowMenu($panelBottomMenuArray);
+?>
+</div>
+</div>
+</form>

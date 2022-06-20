@@ -1,0 +1,47 @@
+<div class="panel__content_address_list">
+<div class="panel__content_address_list_content">
+<table class="address_list_table">
+<thead>
+<tr>
+<th>N</th><th>Адрес</th><th>Действие</th>
+</tr>
+</thead>
+<tbody>
+<?php
+$AddressListArray = Address::GetAddressList();
+if ($AddressListArray != 'no_data')
+{
+$i=0;
+foreach ($AddressListArray as $AddressListElement)
+{
+$id = $AddressListArray[$i]['id'];
+$field1 = $AddressListArray[$i]['field1'];
+
+// TODO <a href="index.php?page=admin&section=address_go&id='.$id.'" class="table__link">Перейти</a>&nbsp;&nbsp; 
+
+echo '<tr>
+<td>'.$i.'</td>
+<td>'.$field1.'</td>
+<td class="action">
+<a href="index.php?page=admin&section=address_edit&id='.$id.'" class="table__link">Редактировать</a>&nbsp;&nbsp;
+<a href="actions.php?action=address_delete&id='.$id.'" class="confirm_address_delete_href table__link">Удалить</a>
+</td></tr>';
+$i++;
+}
+}
+?>
+</tbody>
+</table>
+</div>
+
+<div class="panel__content_address_list_bottom_menu">
+<?php
+// Нижнее меню панели.
+$panelBottomMenuArray[0] =  ['panel__button panel__button-left','index.php?page=admin&section=address_add', 'Создать новый адрес'];
+echo HTML::ShowMenu($panelBottomMenuArray);
+?>
+</div>
+</div>
+
+
+
