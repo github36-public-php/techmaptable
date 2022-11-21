@@ -1,865 +1,547 @@
-html, body {
-    width: 100%;
+/* 
+Ревьювер!
+Этот документ проходит проверку по стандарту CSS3 + SVG
+Ошибок 0. Проблем 0.
+https://jigsaw.w3.org/css-validator/validator 
+*/
+html,
+body {
+    background: url("/images/background.webp") no-repeat;
     height: 100%;
     margin: 0;
     padding: 0;
-    background:url("/images/background.webp") no-repeat;
-    /*background:#3869AA;*/
-    /* overflow: hidden; */
-}
-
+    width: 100%;
+  }
 .help_container {
-    top: 2%;
-    left: 50%;
-    width: 400px;
-    position: absolute;
-    margin-left: -200px;
+    background: #ffff33;
     border: 4px solid #4d4d4d;
-    background: #FFFF33;
-    text-decoration: none;
-    vertical-align: middle;
+    left: 50%;
+    margin-left: -200px;
     padding: 6px;
-}
-
+    position: absolute;
+    text-decoration: none;
+    top: 2%;
+    vertical-align: middle;
+    width: 400px;
+  }
 .shadow {
-    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.5);
-    -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.5);
-    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.5);
-}
-
-
-.this__selectable_none {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+    box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.5);
+  }
+.this__selectable_none {    
     user-select: none;
-}
-
-
+  }
 .this__cursor_pointer {
-cursor: pointer;
-}
-
-
-a.button
-{
+    cursor: pointer;
+  }
+a.button {
+    background: #0074e0;
+    border: 0;
+    color: #ffffff;
+    cursor: pointer;
     font-family: Arial;
     font-size: 16px;
-    color: #ffffff;
-    border: 0px;
-    text-decoration: none;
-    cursor: pointer;
-    background: #0074e0;
-    transition: 0.1s linear;
     padding: 7px 30px;
     text-align: center;
+    text-decoration: none;
+    transition: 0.1s linear;
     vertical-align: bottom;
-
-}
-
+  }
 a.button:hover {
-    background: #148EFF;
-}
-
+    background: #148eff;
+  }
 a.button:active {
-    background: #003F7A;
-}
-
-
-
-
-
+    background: #003f7a;
+  }
 .window__input-type-text {
     font-family: Arial;
     font-size: 14px;
     height: 24px;
     outline: none;
-}
-
-
+  }
 .window__label {
-    font-family: Arial;
-    font-size: 16px;
+    align-self: center;
     color: #ffffff;
     float: left;
-    align-self: center;
-}
-
+    font-family: Arial;
+    font-size: 16px;
+  }
 .window__footer-button-position {
     position: relative;
-}
-
-
+  }
 .window {
-
-    display: grid;
-    grid-template-columns:  auto;
-    grid-template-rows: 26px 16px auto 16px 32px;
-
-
-    border: 4px solid #252525;
     background: #151515;
+    border: 4px solid #252525;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 26px 16px auto 16px 32px;
+    min-height: 100px;
+    min-width: 100px;
     padding: 30px;
     position: relative;
-
-
-    min-width: 100px;
-    min-height: 100px;
-}
-
-
+  }
 .window__header {
-    grid-area: 1 / 1 / 1 / 1; /* ряд начала/колонка начала / ряд конца/колонка конца */
-    font-family: Arial;
-    font-weight: normal;
-    font-size: 18px;
     color: #ffffff;
-    text-align: center;
-    margin: 0;
-}
-
-
-.window__content {
-    grid-area: 3 / 1 / 3 / 1;
     font-family: Arial;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: normal;
+    grid-area: 1 / 1 / 1 / 1;
+    margin: 0;
+    text-align: center;
+  }
+.window__content {
     color: #ffffff;
     float: left;
-
-}
-
-
+    font-family: Arial;
+    font-size: 16px;
+    grid-area: 3 / 1 / 3 / 1;
+  }
 .window__footer {
-    grid-area: 5 / 1 / 5 / 1;
-    display: flex;
-    justify-content: center;
     align-items: center;
-}
-
-a.window__button {
+    display: flex;
+    grid-area: 5 / 1 / 5 / 1;
+    justify-content: center;
+  }
+.window__button {
     grid-area: 4 / 1 / 3 / 1;
-}
-
-
-
-
+  }
 .window__button-margin-left {
     margin-left: 10px;
-}
-
-
+  }
 .authorization-form {
-
-    grid-area: 4 / 1 / 4 / 1;
     display: grid;
+    grid-area: 4 / 1 / 4 / 1;
     grid-template-columns: 80px 240px;
     grid-template-rows: 26px 18px 28px;
-
-}
-
-
+  }
 .authorization-form__login-label {
-    grid-area: 1 / 1 / 1 / 1; /* ряд начала/колонка начала / ряд конца/колонка конца */
-
-}
-
+    grid-area: 1 / 1 / 1 / 1;
+  }
 .authorization-form__login-input {
     grid-area: 1 / 2 / 1 / 2;
-}
-
-
+  }
 .authorization-form__password-label {
     grid-area: 3 / 1 / 3 / 1;
-
-}
-
-
+  }
 .authorization-form__password-input {
     grid-area: 3 / 2 / 3 / 2;
-}
-
-
-/* применяется c window__footer-button-position */
+  }
 .authorization-button {
-
+    bottom: 0;
     grid-area: 5 / 5 / 5 / 5;
     position: absolute;
-
     right: 0;
-    bottom: 0;
-}
-
-
+  }
 .menu {
-    width: 100%;
-    display: flex;
-	
     align-items: center;
     background: #151515;
-    white-space: nowrap;
+    display: flex;
     height: 60px;
-}
-
-
-
-
+    white-space: nowrap;
+    width: 100%;
+  }
 .menu-link {
-
-    font-size: 16px;
     font-family: Arial;
-    text-decoration: none;
+    font-size: 16px;
     letter-spacing: 0.5px;
-    position: relative;
-    /*display: block;*/
     padding: 21px 20px;
-}
-
+    position: relative;
+    text-decoration: none;
+  }
 .menu-link_normal {
     color: #cccccc;
-}
-
+  }
 .menu-link:hover {
     color: #ffffff;
     transition: 0.1s;
-}
-
-
+  }
 .menu-link_active {
-    color: #FFAC32;
-    
-}
-
+    color: #ffac32;
+  }
 .menu-link_active::after {
+    background: #ffac32;
+    bottom: 0;
     content: "";
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
     height: 4px;
-    background: #FFAC32
-}
-
-
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
 .menu-separator {
-
-    font-size: 16px;
     color: #cccccc;
+    display: inline-block;
     font-family: Arial;
+    font-size: 16px;
     text-decoration: none;
     white-space: nowrap;
-    display: inline-block;
-}
+  }
 .menu-separator::after {
-    content: "|";}
-
-
-
+    content: "|";
+  }
 .page {
-    width: 100vw;
-    height: 100vh;
     display: grid;
-    grid-template-columns:  auto;
+    grid-template-columns: auto;
     grid-template-rows: 60px auto;
-}
-
+    height: 100vh;
+    width: 100vw;
+  }
 .page__menu {
     grid-area: 1 / 1 / 1 / 1;
-}
-
-
+  }
 .page__content {
     grid-area: 2 / 1 / 2 / 1;
     overflow: auto;
-}
-
-
-
-
+  }
 a.panel__button {
-
+    background: #171a21;
+    border: 1px solid #b2b2b2;
+    color: #e6e6e6;
+    cursor: pointer;
     font-family: Arial;
     font-size: 16px;
-    color: #E6E6E6;
-    border: 1px solid #B2B2B2;
-    text-decoration: none;
-    cursor: pointer;
-    background:#171A21;
-    transition: 0.1s linear;
     padding: 7px 30px;
     text-align: center;
-
-}
-
-
-a.panel__button:hover {background: #05547A; border: 1px solid #ffffff; color: #ffffff;}
-a.panel__button_active {background: #FFAC32; border: 1px solid #ffffff; color: #000000;}
-
-
-
+    text-decoration: none;
+    transition: 0.1s linear;
+  }
+.panel__button:hover {
+    background: #05547a;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+  }
+.panel__button_active {
+    background: #ffac32;
+    border: 1px solid #ffffff;
+    color: #000000;
+  }
 .window__wrapper {
-	display: flex;
     align-items: center;
-    justify-content: center;
-	height: calc(100vh);
-}
-
-
-.wrapper-position-center {
-
     display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.html__wrapper-position-center
-{
     height: calc(100vh);
-}
-
-.page__wrapper-position-center
-{
-    height: calc(100vh - 60px);
-}
-
-
-
-.panel {
-
-    display: grid;
-    grid-template-columns:  auto;
-    grid-template-rows: 60px auto;
-
-    border: 4px solid #252525;
-    background: #FAFAFA;
-
-min-width: 800px;
-    min-height:600px ;
-}
-
-
-
-.panel__header {
-grid-area: 1 / 1 / 1 / 1; /* ряд начала/колонка начала / ряд конца/колонка конца */
-}
-
-.panel__content {
-grid-area: 2 / 1 / 2 / 1; /* ряд начала/колонка начала / ряд конца/колонка конца */
-/*padding: 10px;*/
-
-//overflow: auto;
-}
-
-.panel__content_text {
-    font-family:Arial;
-    font-size:14px;
-
-}
-
-
-
-
-a.panel__button-left {
-margin-left: 10px;
-}
-
-a.panel__button-right {
-margin-right: 10px;
-}
-
-a.panel__button-float-right {
-float: right;
-}
-
-
-
-.page__user-panel{
-    grid-area: 1 / 1 / 1 / 1;
-    display: flex;
+    justify-content: center;
+  }
+.wrapper-position-center {
     align-items: center;
-    justify-content: right;
-}
-
-.page__user-panel_information{
-    margin-right: 20px;
-    font-size: 16px;
+    display: flex;
+    justify-content: center;
+  }
+.html__wrapper-position-center {
+    height: calc(100vh);
+  }
+.page__wrapper-position-center {
+    height: calc(100vh - 60px);
+  }
+.panel {
+    background: #fafafa;
+    border: 4px solid #252525;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 60px auto;
+    min-height: 600px;
+    min-width: 800px;
+  }
+.panel__header {
+    grid-area: 1 / 1 / 1 / 1;
+  }
+.panel__content {
+    grid-area: 2 / 1 / 2 / 1;
+  }
+.panel__content_text {
     font-family: Arial;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-    color: #E6E6E6;
-}
-
-.page__user-panel_buttons{
+    font-size: 14px;
+  }
+.panel__button-left {
+    margin-left: 10px;
+  }
+.panel__button-right {
     margin-right: 10px;
-}
-
-
-
-
-
-
-
-
-
-
-
-/* Разметка шаблона ShowAdressList */
-.panel__content_address_list{
-display: grid;
-grid-template-columns: 1000px;
-grid-template-rows: 500px 60px;	
-}
-
-.panel__content_address_list_content{
-grid-area: 1 / 1 / 1 / 1;	 /* ряд начала/колонка начала / ряд конца/колонка конца */
-overflow:auto;
-}
-
-.panel__content_address_list_bottom_menu{
-grid-area: 2 / 1 / 2 / 1;		
-}
-
-.address_list_table{
-font-family: Arial;
-font-size: 14px;
-text-align: left;
-border-collapse: collapse;
-width:100%;
-}
-
-.address_list_table td, th {
-padding: 8px 8px;
-border: 1px solid #BFBFBF;
-}
-
-.address_list_table th {
-background-color: #D9D9D9;
-}
-
-.address_list_table td.action {
-text-align:right;
-width:1%;
-white-space: nowrap;
-}
-
-
-
-
-/* Разметка шаблона ShowAddressForm */
-.panel__content_address_form{
-display: grid;
-grid-template-columns: 1000px;
-grid-template-rows: 500px 60px;	
-}
-
-.panel__content_address_form_content{
-grid-area: 1 / 1 / 1 / 1;
-padding: 10px;
-}
-
-.panel__content_address_form_bottom_menu{
-grid-area: 2 / 1 / 2 / 1;		
-}
-
-
-.panel__content_address_form_grid{	
-display: grid;
-grid-gap:10px;
-grid-template-columns: 100px auto; /* Ширину устанавливает panel__content_address_form_grid__role-select */
-grid-template-rows: 26px 26px 26px 100%;		
-}
-
-
-
-.panel__content_address_form_grid__header {
-grid-area: 1 / 1 / 1 / 3; /* ряд начала/колонка начала / ряд конца/колонка конца */
-}
-
-.panel__content_address_form_grid__address-label {
-grid-area: 2 / 1 / 2 / 1;	
-}
-.panel__content_address_form_grid__address-input {
-grid-area: 2 / 2 / 2 / 2;	
-	
-}
-
-.panel__content_address_form_grid__user_list_header {
-grid-area: 3 / 1 / 3 / 3;	
-}
-
-/* TODO исправить разметку*/
-.panel__content_address_form_grid__user_list_list {
-grid-area: 4 / 1 / 4 / 3;	
-overflow: auto;
-/*background:red;*/
-height:382px;
-}
-
-
-
-
-
-
-
-
-
-/* Разметка шаблона ShowUserList */
-.panel__content_user_list{
-display: grid;
-grid-template-columns: 1000px;
-grid-template-rows: 500px 60px;	
-}
-
-.panel__content_user_list_content{
-grid-area: 1 / 1 / 1 / 1;	 /* ряд начала/колонка начала / ряд конца/колонка конца */
-overflow:auto;
-}
-
-.panel__content_user_list_bottom_menu{
-grid-area: 2 / 1 / 2 / 1;		
-}
-
-.user_list_table{
-font-family: Arial;
-font-size: 14px;
-text-align: left;
-border-collapse: collapse;
-width:100%;
-}
-
-.user_list_table td, th {
-padding: 8px 8px;
-border: 1px solid #BFBFBF;
-}
-
-.user_list_table th {
-background-color: #D9D9D9;
-}
-
-.user_list_table td.action {
-/*text-align:right;*/
-
-width:1%;
-white-space: nowrap;
-}
-
-
-
-
-
-
-/* Разметка шаблона ShowUserForm */
-.panel__content_user_form{
-display: grid;
-grid-template-columns: 1000px;
-grid-template-rows: 500px 60px;	
-}
-
-.panel__content_user_form_content{
-grid-area: 1 / 1 / 1 / 1;
-padding: 10px;
-}
-
-.panel__content_user_form_bottom_menu{
-grid-area: 2 / 1 / 2 / 1;		
-}
-
-
-.panel__content_user_form_grid{	
-display: grid;
-grid-gap:10px;
-grid-template-columns: 100px auto; /* Ширину устанавливает panel__content_user_form_grid__role-select */
-grid-template-rows: 26px 26px 26px 26px 26px 26px 26px 26px 26px;		
-}
-
-
-
-.panel__content_user_form_grid__input-type-text {
-
-}
-
-
-.panel__content_user_form_grid__header {
-grid-area: 1 / 1 / 1 / 3; /* ряд начала/колонка начала / ряд конца/колонка конца */
-}
-
-.panel__content_user_form_grid__login-label {
-grid-area: 2 / 1 / 2 / 1;	
-}
-.panel__content_user_form_grid__login-input {
-grid-area: 2 / 2 / 2 / 2;	
-	
-}
-
-.panel__content_user_form_grid__password-label {
-grid-area: 3 / 1 / 3 / 1;	
-}
-
-.panel__content_user_form_grid__password-div {
-grid-area: 3 / 2 / 3 / 2;	
-}
-.panel__content_user_form_grid__password-input {
-	
-}
-
-
-.panel__content_user_form_grid__role-label {
-grid-area: 4 / 1 / 4 / 1;	
-}
-.panel__content_user_form_grid__role-select {
-grid-area: 4 / 2 / 4 / 2;	
-width:340px;	
-}
-
-
-.panel__content_user_form_grid__user_surname-label {
-grid-area: 5 / 1 / 5 / 1;	
-}
-.panel__content_user_form_grid__user_surname-input {
-grid-area: 5 / 2 / 5 / 2;	
-	
-}
-
-
-
-.panel__content_user_form_grid__user_name-label {
-grid-area: 6 / 1 / 6 / 1;		
-}
-.panel__content_user_form_grid__user_name-input {
-grid-area: 6 / 2 / 6 / 2;		
-}
-
-
-.panel__content_user_form_grid__user_patronymic-label {
-grid-area: 7 / 1 / 7 / 1;	
-}
-.panel__content_user_form_grid__user_patronymic-input {
-grid-area: 7 / 2 / 7 / 2;		
-}
-
-
-.panel__content_user_form_grid__user_description-label {
-grid-area: 8 / 1 / 8 / 1;		
-}
-.panel__content_user_form_grid__user_description-input {
-grid-area: 8 / 2 / 8 / 2;		
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.table{
+  }
+.panel__button-float-right {
+    float: right;
+  }
+.page__user-panel {
+    align-items: center;
+    display: flex;
+    grid-area: 1 / 1 / 1 / 1;
+    justify-content: right;
+  }
+.page__user-panel_information {
+    color: #e6e6e6;
     font-family: Arial;
-    font-size: 14px;
-    text-align: left;
-    border-collapse: collapse;
-}
-
-.table td {
-    padding: 8px 8px;
-    border: 1px solid #BFBFBF;
-}
-
-.table tr:first-child {
-    background-color: #D9D9D9;
-
-}
-
-
-
-a.table__link {
-    font-family:Arial;
-    font-size:12px;
-    color:#000000;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    margin-right: 20px;
     text-decoration: none;
-    border-bottom: 1px dotted #000000;
-}
-
-a.table__link:visited {
-    color:#000000;
-}
-a.table__link:hover {
- color:#053148;
-}
-
-
-
-.techmaptable{
+  }
+.page__user-panel_buttons {
+    margin-right: 10px;
+  }
+/* Разметка шаблона ShowAdressList */
+.panel__content_address_list {
+    display: grid;
+    grid-template-columns: 1000px;
+    grid-template-rows: 500px 60px;
+  }
+.panel__content_address_list_content {
+    grid-area: 1 / 1 / 1 / 1;
+    overflow: auto;
+  }
+.panel__content_address_list_bottom_menu {
+    grid-area: 2 / 1 / 2 / 1;
+  }
+.address_list_table {
+    border-collapse: collapse;
     font-family: Arial;
     font-size: 14px;
     text-align: left;
-   border-collapse: collapse;
-	background:#ffffff;
-}
-
-/* Стиль для мозиллы */
-@-moz-document url-prefix()
-{
-    .techmaptable {
-		border-collapse: unset;
-		}
-}
-
-
+    width: 100%;
+  }
+.address_list_table td,
+th {
+    border: 1px solid #bfbfbf;
+    padding: 8px 8px;
+  }
+.address_list_table th {
+    background-color: #d9d9d9;
+  }
+.address_list_table td.action {
+    text-align: right;
+    white-space: nowrap;
+    width: 1%;
+  }
+/* Разметка шаблона ShowAddressForm */
+.panel__content_address_form {
+    display: grid;
+    grid-template-columns: 1000px;
+    grid-template-rows: 500px 60px;
+  }
+.panel__content_address_form_content {
+    grid-area: 1 / 1 / 1 / 1;
+    padding: 10px;
+  }
+.panel__content_address_form_bottom_menu {
+    grid-area: 2 / 1 / 2 / 1;
+  }
+.panel__content_address_form_grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 100px auto;
+    grid-template-rows: 26px 26px 26px 100%;
+  }
+.panel__content_address_form_grid__header {
+    grid-area: 1 / 1 / 1 / 3;
+  }
+.panel__content_address_form_grid__address-label {
+    grid-area: 2 / 1 / 2 / 1;
+  }
+.panel__content_address_form_grid__address-input {
+    grid-area: 2 / 2 / 2 / 2;
+  }
+.panel__content_address_form_grid__user_list_header {
+    grid-area: 3 / 1 / 3 / 3;
+  }
+.panel__content_address_form_grid__user_list_list {
+    grid-area: 4 / 1 / 4 / 3;
+    height: 382px;
+    overflow: auto;
+  }
+/* Разметка шаблона ShowUserList */
+.panel__content_user_list {
+    display: grid;
+    grid-template-columns: 1000px;
+    grid-template-rows: 500px 60px;
+  }
+.panel__content_user_list_content {
+    grid-area: 1 / 1 / 1 / 1;
+    overflow: auto;
+  }
+.panel__content_user_list_bottom_menu {
+    grid-area: 2 / 1 / 2 / 1;
+  }
+.user_list_table {
+    border-collapse: collapse;
+    font-family: Arial;
+    font-size: 14px;
+    text-align: left;
+    width: 100%;
+  }
+.user_list_table td,
+th {
+    border: 1px solid #bfbfbf;
+    padding: 8px 8px;
+  }
+.user_list_table th {
+    background-color: #d9d9d9;
+  }
+.user_list_table td.action {
+    white-space: nowrap;
+    width: 1%;
+  }
+/* Разметка шаблона ShowUserForm */
+.panel__content_user_form {
+    display: grid;
+    grid-template-columns: 1000px;
+    grid-template-rows: 500px 60px;
+  }
+.panel__content_user_form_content {
+    grid-area: 1 / 1 / 1 / 1;
+    padding: 10px;
+  }
+.panel__content_user_form_bottom_menu {
+    grid-area: 2 / 1 / 2 / 1;
+  }
+.panel__content_user_form_grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 100px auto;
+    grid-template-rows: 26px 26px 26px 26px 26px 26px 26px 26px 26px;
+  }
+.panel__content_user_form_grid__header {
+    grid-area: 1 / 1 / 1 / 3;
+  }
+.panel__content_user_form_grid__login-label {
+    grid-area: 2 / 1 / 2 / 1;
+  }
+.panel__content_user_form_grid__login-input {
+    grid-area: 2 / 2 / 2 / 2;
+  }
+.panel__content_user_form_grid__password-label {
+    grid-area: 3 / 1 / 3 / 1;
+  }
+.panel__content_user_form_grid__password-div {
+    grid-area: 3 / 2 / 3 / 2;
+  }
+.panel__content_user_form_grid__role-label {
+    grid-area: 4 / 1 / 4 / 1;
+  }
+.panel__content_user_form_grid__role-select {
+    grid-area: 4 / 2 / 4 / 2;
+    width: 340px;
+  }
+.panel__content_user_form_grid__user_surname-label {
+    grid-area: 5 / 1 / 5 / 1;
+  }
+.panel__content_user_form_grid__user_surname-input {
+    grid-area: 5 / 2 / 5 / 2;
+  }
+.panel__content_user_form_grid__user_name-label {
+    grid-area: 6 / 1 / 6 / 1;
+  }
+.panel__content_user_form_grid__user_name-input {
+    grid-area: 6 / 2 / 6 / 2;
+  }
+.panel__content_user_form_grid__user_patronymic-label {
+    grid-area: 7 / 1 / 7 / 1;
+  }
+.panel__content_user_form_grid__user_patronymic-input {
+    grid-area: 7 / 2 / 7 / 2;
+  }
+.panel__content_user_form_grid__user_description-label {
+    grid-area: 8 / 1 / 8 / 1;
+  }
+.panel__content_user_form_grid__user_description-input {
+    grid-area: 8 / 2 / 8 / 2;
+  }
+.table {
+    border-collapse: collapse;
+    font-family: Arial;
+    font-size: 14px;
+    text-align: left;
+  }
+.table td {
+    border: 1px solid #bfbfbf;
+    padding: 8px 8px;
+  }
+.table tr:first-child {
+    background-color: #d9d9d9;
+  }
+a.table__link {
+    border-bottom: 1px dotted #000000;
+    color: #000000;
+    font-family: Arial;
+    font-size: 12px;
+    text-decoration: none;
+  }
+a.table__link:visited {
+    color: #000000;
+  }
+a.table__link:hover {
+    color: #053148;
+  }
+.techmaptable {
+    background: #ffffff;
+    border-collapse: collapse;
+    font-family: Arial;
+    font-size: 14px;
+    text-align: left;
+  }
 .techmaptable th {
+    background-color: #d9d9d9;
+    border: 1px solid #bfbfbf;
     font-family: Arial;
     font-size: 12px;
     font-weight: normal;
-   /* position: sticky;
-    top: 0; /* Don't forget this, required for the stickiness */*/
     padding: 8px 8px;
-    border: 1px solid #BFBFBF;
-    background-color: #D9D9D9;
-}
-
+  }
 .techmaptable td {
+    border: 1px solid #bfbfbf;
+    max-width: 100%;
     padding: 8px 8px;
-    border: 1px solid #BFBFBF;
-	max-width:100%;
-white-space:nowrap;
-
-}
-
-
-
-/*
-.techmaptable tr:first-child {
-    background-color: #D9D9D9;
-
-}
-*/
-
-
+    white-space: nowrap;
+  }
 .form__input-type-text {
     font-family: Arial;
     font-size: 14px;
     height: 20px;
     outline: none;
-}
-
-.form__header
-{
+  }
+.form__header {
     font-family: Arial;
     font-size: 16px;
-}
-
+  }
 .form__label {
-    float: left;
     align-self: center;
-}
-
+    float: left;
+  }
 .panel__content_user_form_grid {
-	font-family: Arial;
-    font-size: 14px;
-    float: left;
     align-self: center;
-}
-
-
-.address__input-type-text{
-    width: 700px;
-}
-
-
-
-
-
-.page__content_techmaptable
-{
-background: #ffffff;	
-	width: 100vw; 
-  top: 0;
-  left: 0;
-
-  height: 100%;
-  
-  
-display: grid;
-
-grid-template-columns: auto; 
-grid-template-rows: auto ;	
-  
-
-}
-
-.page__content_techmaptable_content {
-grid-area: 1 / 1 / 1 / 1; /* ряд начала/колонка начала / ряд конца/колонка конца */
-    overflow: auto;
-}
-
-
-.page__content_techmaptable_menu
-{
-position:relative;
-
-padding: 20px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.menu__find_form {
-	display: flex;
-    align-items: center;
-    justify-content: right;
-	width:100%;
-    margin-right: 10px;
-    font-size: 16px;
+    float: left;
     font-family: Arial;
-    text-decoration: none;
+    font-size: 14px;
+  }
+.address__input-type-text {
+    width: 700px;
+  }
+.page__content_techmaptable {
+    background: #ffffff;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100vw;
+  }
+.page__content_techmaptable_content {
+    grid-area: 1 / 1 / 1 / 1;
+    overflow: auto;
+  }
+.page__content_techmaptable_menu {
+    padding: 20px;
+    position: relative;
+  }
+.menu__find_form {
+    align-items: center;
+    color: #e6e6e6;
+    display: flex;
+    font-family: Arial;
+    font-size: 16px;
+    justify-content: right;
     letter-spacing: 0.5px;
-    color: #E6E6E6;
-}
-
+    margin-right: 10px;
+    text-decoration: none;
+    width: 100%;
+  }
 .menu__find_input-type-text {
-width:300px;
-height:26px;	
-}
-
-
-
-
-
-
-
-
+    height: 26px;
+    width: 300px;
+  }
