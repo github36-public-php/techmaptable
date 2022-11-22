@@ -5,13 +5,13 @@ include_once __DIR__.'/User.php';
 class Data
 {
 
-static function GET($parameterName) {
+static function getData($parameterName) {
 $data=$_GET[$parameterName];
 //TODO Тут фильтрация данных
 return $data;
 }
 
-static function POST($parameterName) {
+static function postData($parameterName) {
 $data=$_POST[$parameterName];
 //TODO Тут фильтрация данных
 return $data;
@@ -20,8 +20,8 @@ return $data;
 
 
 
-// Удалить первые колонки из массива
-static function RemoveColumnsFromArray($Array, $columnsNumber)
+// Удалить первые колонки из массива.
+static function removeColumnsFromArray($Array, $columnsNumber)
 {
 $NewArray=array();	
 foreach ($Array as $ArrayElement)
@@ -35,26 +35,5 @@ return $NewArray;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
-?>

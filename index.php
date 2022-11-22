@@ -1,21 +1,21 @@
 <?php
 include_once __DIR__.'/classes/classes.php';
 
-$userStatus = User::GetUserStatus();
+$userStatus = User::getUserStatus();
 
 // Страница для неавторизированных пользователей.
-if ($userStatus !='authorized'){ echo HTML::ShowAuthorizationPage('actions.php?action=login'); exit; }
+if ($userStatus !='authorized'){ echo HTML::showAuthorizationPage('actions.php?action=login'); exit; }
 
 
 // Страница для авторизированных пользователей.
 if ($userStatus =='authorized')
 {
 // Получаем данные о текущей странице.
-$page=Data::GET('page');
+$page=Data::getData('page');
 if ($page == '') $page = 'table'; // По умолчанию.
 
 // Получаем все данные о пользователе.
-$UserDataArray = User::GetAllUserDataBasedOnUserCookie();
+$UserDataArray = User::getAllUserDataBasedOnUserCookie();
 $userRole = $UserDataArray['user_role'];
 
 // Формируем ФИО.
@@ -37,10 +37,10 @@ if ($page == 'admin') $pageTopMenuArray[1][0] = 'menu-link_active';
 $pageTopMenu=HTML::ShowMenu($pageTopMenuArray);
 
 // Подключение страниц.
-if ($page == 'table') $pageСontent = HTML::GetHTMLCode(__DIR__.'/pages/table.php');
-if ($page == 'admin') $pageСontent = HTML::GetHTMLCode(__DIR__.'/pages/admin.php');
+if ($page == 'table') $pageСontent = HTML::getHTMLCode(__DIR__.'/pages/table.php');
+if ($page == 'admin') $pageСontent = HTML::getHTMLCode(__DIR__.'/pages/admin.php');
 
 // Рендеринг страницы.
-echo HTML::ShowPage('Главная страница',$pageTopMenu, $pageUserPanel, $pageСontent);
+echo HTML::showPage('Главная страница',$pageTopMenu, $pageUserPanel, $pageСontent);
 }
 ?>

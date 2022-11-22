@@ -7,7 +7,7 @@ Security::AccessAdminOnly();
 // $templateArgumentsArray[0] передается (действие для формы) но не используется. Опция временно оставлена.
 
 // Получаем данные.
-$section=Data::GET('section');
+$section=Data::getData('section');
 
 // Устанавливаем значения элементов формы.
 //Создание нового адреса
@@ -27,7 +27,7 @@ $buttonText = 'Редактировать адрес';
 
 
 // Получаем данные.
-$id=Data::GET('id');
+$id=Data::getData('id');
 $addressRowArray = Address::GetAddressRow($id);
 $id = $addressRowArray['id'];
 $users_id = $addressRowArray['users_id'];

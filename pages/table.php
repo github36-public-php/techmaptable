@@ -2,11 +2,11 @@
 include_once __DIR__.'/../classes/classes.php';
 
 // Скрипт доступен только авторизированным пользователям.
-Security::AccessRegisteredUsersOnly();
+Security::accessRegisteredUsersOnly();
 
 // Получаем данные.
 // Получаем id пользователя.
-$UserDataArray = User::GetAllUserDataBasedOnToken();
+$UserDataArray = User::getAllUserDataBasedOnToken();
 $userId =$UserDataArray['id'];
 $userRole=$UserDataArray['user_role'];
 
@@ -15,7 +15,7 @@ if ($userRole=='Администратор') $sqlString = '';  else $sqlString =
 
 // Показ таблицы.
 $query = "SELECT * FROM `techmaptable` $sqlString";
-$queryResult = MySQL::MySQLQuery($query);
+$queryResult = MySQL::mySQLQuery($query);
 $num_rows = $queryResult->num_rows;
 $field_count = $queryResult->field_count;
 $tableFieldCount = $field_count -2; // Количество колонок в отображаемой таблице (2 служебные)
@@ -42,7 +42,7 @@ array_push($TechmapTableRowsArray,'</td>');
 array_push($TechmapTableRowsArray,'</tr>');
 }
 
-echo HTML::ShowTechmapTable($TechmapTableRowsArray);
+echo HTML::showTechmapTable($TechmapTableRowsArray);
 
 
 ?>

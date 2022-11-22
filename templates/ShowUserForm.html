@@ -7,7 +7,7 @@ Security::AccessAdminOnly();
 // $templateArgumentsArray[0] передается (действие для формы) но не используется. Опция временно оставлена.
 
 // Получаем данные.
-$section=Data::GET('section');
+$section=Data::getData('section');
 
 // Устанавливаем значения элементов формы.
 //Создание нового пользователя
@@ -26,7 +26,7 @@ $formTitle = 'Редактировать пользователя';
 $buttonText = 'Редактировать пользователя';
 $passwordHint = 'Оставьте поле пустым, если не хотите менять пароль.';
 // Получаем данные.
-$id=Data::GET('id');
+$id=Data::getData('id');
 $UserDataArray = User::GetAllUserDataBasedOnUserId($id);
 $login = $UserDataArray['login'];
 $user_role = $UserDataArray['user_role'];

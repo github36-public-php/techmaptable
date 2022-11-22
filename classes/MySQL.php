@@ -4,8 +4,8 @@ class MySQL
 {
 
 // Подключение к БД.
-static function ConnectToBase() {
-$IniArray = Settings::GetSettingsIniArray();
+static function connectToBase() {
+$IniArray = Settings::getSettingsIniArray();
 $hostname = $IniArray['hostname'];
 $username = $IniArray['username'];
 $password = $IniArray['password'];
@@ -25,12 +25,11 @@ return $mysqli;
 }
 
 // Выполнение запроса.
-static function MySQLQuery($query) {
-$mysqli = self::ConnectToBase();
+static function mySQLQuery($query) {
+$mysqli = self::connectToBase();
 //TODO тут проверка на sql инъекции
 $queryResult = $mysqli->query($query) or die ($mysqli->error);
 return  $queryResult;
 }
 
 }
-?>

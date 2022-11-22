@@ -2,10 +2,10 @@
 include_once __DIR__.'/../classes/classes.php';
 
 // Скрипт доступен только администраторам.
-Security::AccessAdminOnly();
+Security::accessAdminOnly();
 
 // Получаем данные.
-$section=Data::GET('section');
+$section=Data::getData('section');
 
 // Верхнее меню панели.
 $panelTopMenuArray[0] =  ['menu-link_normal','index.php?page=admin&section=address', 'Адреса'];
@@ -34,26 +34,26 @@ $panelTopMenu=HTML::ShowMenu($panelTopMenuArray, $panelTopMenuCode);
 
 // АДРЕСА.
 // Список адресов.
-if ($section == 'address') $panelСontent = HTML::ShowAddressList();
+if ($section == 'address') $panelСontent = HTML::showAddressList();
 // Добавить адрес.
-if ($section == 'address_add') $panelСontent = HTML::ShowAddressForm(''); // Действие определено в самой форме (передавать его не нужно).
+if ($section == 'address_add') $panelСontent = HTML::showAddressForm(''); // Действие определено в самой форме (передавать его не нужно).
 // Редактировать адрес.
-if ($section == 'address_edit') $panelСontent = HTML::ShowAddressForm(''); // Действие определено в самой форме (передавать его не нужно).
+if ($section == 'address_edit') $panelСontent = HTML::showAddressForm(''); // Действие определено в самой форме (передавать его не нужно).
 // Удалить адрес - формы нет т.к. после js подтверждения сразу выполняется удаление.
 
 
 
 // ПОЛЬЗОВАТЕЛИ.
 // Список пользователей.
-if ($section == 'users') $panelСontent = HTML::ShowUserList();
+if ($section == 'users') $panelСontent = HTML::showUserList();
 // Добавить пользователя.
-if ($section == 'users_add') $panelСontent = HTML::ShowUserForm(''); // Действие определено в самой форме (передавать его не нужно).
+if ($section == 'users_add') $panelСontent = HTML::showUserForm(''); // Действие определено в самой форме (передавать его не нужно).
 // Редактировать пользователя.
-if ($section == 'users_edit') $panelСontent = HTML::ShowUserForm(''); // Действие определено в самой форме (передавать его не нужно).
+if ($section == 'users_edit') $panelСontent = HTML::showUserForm(''); // Действие определено в самой форме (передавать его не нужно).
 // Удалить пользователя - формы нет т.к. после js подтверждения сразу выполняется удаление.
 
 
 
 // Рендеринг панели.
-echo HTML::ShowPanelMarkup('',$panelTopMenu, $panelСontent, $panelBottomMenu);
+echo HTML::showPanelMarkup('',$panelTopMenu, $panelСontent, $panelBottomMenu);
 ?>

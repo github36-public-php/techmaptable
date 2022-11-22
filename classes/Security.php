@@ -5,19 +5,19 @@ class Security
 {
 	
 // Генерация хеша пароля пользователя (для гарантированной уникальности передаем id пользователя).
-static function CreateUserToken($userId) {
+static function createUserToken($userId) {
 $userToken = uniqid($userId);
 return $userToken;
 }
 
 // Проверка на латиннские буквы и символы.
-static function OnlyDigitsAndEngLetters($string) {
+static function onlyDigitsAndEngLetters($string) {
 if (!preg_match('/[^A-Za-z0-9]/', $string)) return true; else return false;
 }
 
 // Доступ только для зарегистрированных пользователей.
-static function AccessRegisteredUsersOnly() {
-$userStatus = User::GetUserStatus();
+static function accessRegisteredUsersOnly() {
+$userStatus = User::getUserStatus();
 if ($userStatus != 'authorized')
 {
 header("Location: /");
@@ -26,8 +26,8 @@ exit;
 }
 
 // Доступ только для администраторов.
-static function AccessAdminOnly() {
-$UserDataArray = User::GetAllUserDataBasedOnUserCookie();
+static function accessAdminOnly() {
+$UserDataArray = User::getAllUserDataBasedOnUserCookie();
 $userRole = $UserDataArray['user_role'];
 if ($userRole != 'Администратор')
 {
@@ -38,9 +38,5 @@ exit;
 
 
 
-
-
-
 }
 
-?>
