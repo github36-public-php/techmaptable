@@ -1,5 +1,9 @@
 <?php
-include_once __DIR__ . '/User.php';
+
+namespace techmap\classes;
+
+include_once __DIR__.'/../vendor/autoload.php';
+use techmap\classes\User;
 
 // Получить информацию, переданную методом GET.
 class Data

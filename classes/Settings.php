@@ -1,5 +1,7 @@
 <?php
 
+namespace techmap\classes;
+
 class Settings
 {
 

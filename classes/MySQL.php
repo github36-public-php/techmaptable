@@ -1,5 +1,9 @@
 <?php
-include_once __DIR__ . '/Settings.php';
+
+namespace techmap\classes;
+
+include_once __DIR__.'/../vendor/autoload.php';
+use techmap\classes\Settings;
 
 class MySQL
 {
@@ -13,7 +17,7 @@ class MySQL
         $password = $IniArray['password'];
         $base = $IniArray['base'];
         $timeZone = $IniArray['timeZone'];
-        $mysqli = new mysqli($hostname, $username, $password, $base);
+        $mysqli = new \mysqli($hostname, $username, $password, $base);
         unset($hostname, $username, $password, $base);
         if ($mysqli->connect_errno) {
             echo "Error. System can not connect to the database. hostname=$hostname username=$username password=$password base=$base";

@@ -1,6 +1,10 @@
 <?php
-include_once __DIR__ . '/MySQL.php';
-include_once __DIR__ . '/Settings.php';
+
+namespace techmap\classes;
+
+include_once __DIR__.'/../vendor/autoload.php';
+use techmap\classes\MySQL;
+use techmap\classes\Settings;
 
 class User
 {

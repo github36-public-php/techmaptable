@@ -1,9 +1,12 @@
 <?php
-include_once __DIR__ . '/MySQL.php';
-include_once __DIR__ . '/TechmapTable.php';
-include_once __DIR__ . '/MySQL.php';
-include_once __DIR__ . '/User.php';
-include_once __DIR__ . '/Data.php';
+
+namespace techmap\classes;
+
+include_once __DIR__.'/../vendor/autoload.php';
+use techmap\classes\MySQL;
+use techmap\classes\TechmapTable;
+use techmap\classes\User;
+use techmap\classes\Data;
 
 include_once __DIR__ . '/../addons/SimpleXLSXGen.php';
 
@@ -34,7 +37,7 @@ class Files
 // Удаляем первые 2 колонки из массива.
         $TableDataArray = Data::removeColumnsFromArray($TableDataArray, 2);
 
-        $xlsx = SimpleXLSXGen::fromArray($TableDataArray);
+        $xlsx = \SimpleXLSXGen::fromArray($TableDataArray);
         $xlsx->saveAs($pathToUserFile);
 
         $url = '/output_files/' . $userId . '/excel_table.xlsx';

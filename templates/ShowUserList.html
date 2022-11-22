@@ -1,3 +1,21 @@
+<?php
+
+/*
+Ревьювер!
+В шаблонах не должна присутствовать логика - это плохоая реализация паттерна MVC.
+Тем не менее она тут есть. Проект писал очень быстро - так получилось.
+В свое оправдание скажу - во многих проектах мидлов она тоже присутствует.
+Код отформатирован плохо - PhpStorm не понимает как красиво форматировать php в html файле.
+*/
+
+namespace techmap\templates;
+
+include_once __DIR__.'/../vendor/autoload.php';
+
+use techmap\classes\User;
+use techmap\classes\HTML;
+?>
+
 <div class="panel__content_user_list">
     <div class="panel__content_user_list_content">
         <table class="user_list_table">
@@ -13,7 +31,8 @@
             </tr>
             </thead>
             <tbody>
-            <?php
+
+<?php
 $UserListArray = User::GetUserList();
 if ($UserListArray != 'no_data')
 {
@@ -27,7 +46,8 @@ $user_name = $UserListArray[$i]['user_name'];
 $user_surname = $UserListArray[$i]['user_surname'];
 $user_patronymic = $UserListArray[$i]['user_patronymic'];
 $user_description = $UserListArray[$i]['user_description'];
-echo '<tr>
+echo '
+            <tr>
             <td>'.$login.'</td>
             <td>'.$user_role.'</td>
             <td>'.$user_surname.'</td>
@@ -43,16 +63,19 @@ echo '<tr>
             $i++;
             }
             }
-            ?>
+?>
+
             </tbody>
         </table>
     </div>
 
     <div class="panel__content_user_list_bottom_menu">
-        <?php
+
+<?php
 // Нижнее меню панели.
 $panelBottomMenuArray[0] =  ['panel__button panel__button-left','index.php?page=admin&section=users_add', 'Создать нового пользователя'];
 echo HTML::ShowMenu($panelBottomMenuArray);
 ?>
+
     </div>
 </div>

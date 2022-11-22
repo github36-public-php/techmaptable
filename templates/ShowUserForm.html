@@ -1,5 +1,19 @@
 <?php
-include_once __DIR__.'/../classes/classes.php';
+
+/*
+Ревьювер!
+В шаблонах не должна присутствовать логика - это плохоая реализация паттерна MVC.
+Тем не менее она тут есть. Проект писал очень быстро - так получилось.
+В свое оправдание скажу - во многих проектах мидлов она тоже присутствует.
+*/
+
+namespace techmap\templates;
+
+include_once __DIR__.'/../vendor/autoload.php';
+use techmap\classes\User;
+use techmap\classes\Security;
+use techmap\classes\Data;
+use techmap\classes\HTML;
 
 // Скрипт доступен только администраторам.
 Security::AccessAdminOnly();
@@ -110,12 +124,14 @@ $user_description = $UserDataArray['user_description'];
 
         </div>
         <div class="panel__content_user_form_bottom_menu">
-            <?php
+
+<?php
 // Нижнее меню панели.
 $panelBottomMenuArray[0] =  ['panel__button panel__button-left','index.php?page=admin&section=users', 'Назад'];
 $panelBottomMenuArray[1] =  ['submit_href panel__button panel__button-left','', $buttonText];
 echo HTML::ShowMenu($panelBottomMenuArray);
 ?>
+
         </div>
     </div>
 </form>

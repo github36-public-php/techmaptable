@@ -1,5 +1,21 @@
 <?php
-include_once __DIR__.'/../classes/classes.php';
+
+/*
+Ревьювер!
+В шаблонах не должна присутствовать логика - это плохоая реализация паттерна MVC.
+Тем не менее она тут есть. Проект писал очень быстро - так получилось.
+В свое оправдание скажу - во многих проектах мидлов она тоже присутствует.
+Код отформатирован плохо - PhpStorm не понимает как красиво форматировать php в html файле.
+*/
+
+namespace techmap\templates;
+
+include_once __DIR__.'/../vendor/autoload.php';
+use techmap\classes\Address;
+use techmap\classes\Security;
+use techmap\classes\Data;
+use techmap\classes\User;
+use techmap\classes\HTML;
 
 // Скрипт доступен только администраторам.
 Security::AccessAdminOnly();
@@ -105,7 +121,8 @@ if ($id == $UsersIdElement) {$checkbox_checked='checked'; break;}
 }
 }
 
-if ($user_role != 'Администратор') echo '<tr>
+if ($user_role != 'Администратор') echo '
+                        <tr>
                         <td>'.$login.'</td>
                         <td>'.$user_role.'</td>
                         <td>'.$user_surname.'</td>
@@ -113,7 +130,7 @@ if ($user_role != 'Администратор') echo '<tr>
                         <td>'.$user_patronymic.'</td>
                         <td>'.$user_description.'</td>
                         <td class="action" align="center">
-                            <input type="checkbox" name="users_id[]" value="'.$id.'" '.$checkbox_checked.'>
+                        <input type="checkbox" name="users_id[]" value="'.$id.'" '.$checkbox_checked.'>
                         </td>
                         </tr>';
 
@@ -131,12 +148,14 @@ if ($user_role != 'Администратор') echo '<tr>
             </div>
         </div>
         <div class="panel__content_address_form_bottom_menu">
-            <?php
+
+<?php
 // Нижнее меню панели.
 $panelBottomMenuArray[0] =  ['panel__button panel__button-left','index.php?page=admin&section=address', 'Назад'];
 $panelBottomMenuArray[1] =  ['submit_href panel__button panel__button-left','', $buttonText];
 echo HTML::ShowMenu($panelBottomMenuArray);
 ?>
+
         </div>
     </div>
 </form>

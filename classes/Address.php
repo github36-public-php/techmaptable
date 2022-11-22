@@ -1,5 +1,9 @@
 <?php
-include_once __DIR__ . '/MySQL.php';
+
+namespace techmap\classes;
+
+include_once __DIR__.'/../vendor/autoload.php';
+use techmap\classes\MySQL;
 
 class Address
 {

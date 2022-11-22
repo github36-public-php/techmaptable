@@ -188,6 +188,14 @@
             <tbody>
 
 <?php
+
+/*
+Ревьювер!
+В шаблонах не должна присутствовать логика - это плохоая реализация паттерна MVC.
+Тем не менее она тут есть. Проект писал очень быстро - так получилось.
+В свое оправдание скажу - во многих проектах мидлов она тоже присутствует.
+*/
+
 $TechmapTableRowsArray = $templateArgumentsArray[0];
 foreach ($TechmapTableRowsArray as $TechmapTableRowElement)
  {
@@ -206,6 +214,3 @@ foreach ($TechmapTableRowsArray as $TechmapTableRowElement)
 
 
 </div>
-
-
-

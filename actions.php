@@ -1,5 +1,17 @@
 <?php
-include_once __DIR__.'/classes/classes.php';
+
+namespace techmap;
+
+include_once __DIR__.'/vendor/autoload.php';
+use techmap\classes\Address;
+use techmap\classes\Data;
+use techmap\classes\Files;
+use techmap\classes\HTML;
+use techmap\classes\MySQL;
+use techmap\classes\Security;
+use techmap\classes\Settings;
+use techmap\classes\TechmapTable;
+use techmap\classes\User;
 
 // Контроллер.
 

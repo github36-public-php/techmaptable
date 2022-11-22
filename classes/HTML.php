@@ -1,5 +1,8 @@
 <?php
 
+namespace techmap\classes;
+
+
 class HTML
 {
 

@@ -1,6 +1,6 @@
 <?php
-include_once __DIR__ . '/MySQL.php';
-include_once __DIR__ . '/User.php';
+
+namespace techmap\classes;
 
 class TechmapTable
 {
