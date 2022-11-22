@@ -44,97 +44,78 @@ $user_description = $UserDataArray['user_description'];
 ?>
 
 
-
 <form action="<?=$formAction?>" method="POST">
-<div class="panel__content_user_form">
-<div class="panel__content_user_form_content">
+    <div class="panel__content_user_form">
+        <div class="panel__content_user_form_content">
 
 
-<div class="panel__content_user_form_grid">
-<div class="panel__content_user_form_grid__header form__header">
-<?=$formTitle?>
-</div>
+            <div class="panel__content_user_form_grid">
+                <div class="panel__content_user_form_grid__header form__header">
+                    <?=$formTitle?>
+                </div>
 
-<input value="<?=$id?>" type="hidden" name="id">
+                <input value="<?=$id?>" type="hidden" name="id">
 
-<label class="panel__content_user_form_grid__login-label form__label this__selectable_none">
-Логин
-</label>
-<input class="panel__content_user_form_grid__login-input form__input-type-text" value="<?=$login?>" type="text" name="login">
+                <label class="panel__content_user_form_grid__login-label form__label this__selectable_none">
+                    Логин
+                </label>
+                <input class="panel__content_user_form_grid__login-input form__input-type-text" value="<?=$login?>"
+                       type="text" name="login">
 
-<label class="panel__content_user_form_grid__password-label form__label this__selectable_none">
-Пароль
-</label>
-<div class="panel__content_user_form_grid__password-div">
-<input class="panel__content_user_form_grid__password-input form__input-type-text" value="" type="text" name="password">&nbsp;<label class="form__hint-label"><?=$passwordHint?></label>
-</div>
+                <label class="panel__content_user_form_grid__password-label form__label this__selectable_none">
+                    Пароль
+                </label>
+                <div class="panel__content_user_form_grid__password-div">
+                    <input class="panel__content_user_form_grid__password-input form__input-type-text" value=""
+                           type="text" name="password">&nbsp;<label class="form__hint-label"><?=$passwordHint?></label>
+                </div>
 
-<label class="panel__content_user_form_grid__role-label form__label this__selectable_none">
-Роль
-</label>
+                <label class="panel__content_user_form_grid__role-label form__label this__selectable_none">
+                    Роль
+                </label>
 
-<select class="panel__content_user_form_grid__role-select" name="user_role">
-<option value="Пользователь" <?=$option1?>>Пользователь (доступ только к указанной таблице)</option>
-<option value="Администратор" <?=$option2?>>Администратор (полный доступ)</option>
-</select>
-
-
-<label class="panel__content_user_form_grid__user_surname-label form__label this__selectable_none">
-Фамилия
-</label>
-<input  class="panel__content_user_form_grid__user_surname-input form__input-type-text" value="<?=$user_surname?>" type="text" name="user_surname">
+                <select class="panel__content_user_form_grid__role-select" name="user_role">
+                    <option value="Пользователь"
+                    <?=$option1?>>Пользователь (доступ только к указанной таблице)</option>
+                    <option value="Администратор"
+                    <?=$option2?>>Администратор (полный доступ)</option>
+                </select>
 
 
-<label class="panel__content_user_form_grid__user_name-label form__label this__selectable_none">
-Имя
-</label>
-<input class="panel__content_user_form_grid__user_name-input form__input-type-text" value="<?=$user_name?>" type="text" name="user_name">
+                <label class="panel__content_user_form_grid__user_surname-label form__label this__selectable_none">
+                    Фамилия
+                </label>
+                <input class="panel__content_user_form_grid__user_surname-input form__input-type-text"
+                       value="<?=$user_surname?>" type="text" name="user_surname">
 
-<label class="panel__content_user_form_grid__user_patronymic-label form__label this__selectable_none">
-Отчество
-</label>
-<input class="panel__content_user_form_grid__user_patronymic-input form__input-type-text " value="<?=$user_patronymic?>" type="text" name="user_patronymic">
 
-<label class="panel__content_user_form_grid__user_description-label form__label this__selectable_none">
-Описание
-</label>
-<input class="panel__content_user_form_grid__user_description-input form__input-type-text" value="<?=$user_description?>" type="text" name="user_description">
-</div>
+                <label class="panel__content_user_form_grid__user_name-label form__label this__selectable_none">
+                    Имя
+                </label>
+                <input class="panel__content_user_form_grid__user_name-input form__input-type-text"
+                       value="<?=$user_name?>" type="text" name="user_name">
 
-</div>
-<div class="panel__content_user_form_bottom_menu">
-<?php
+                <label class="panel__content_user_form_grid__user_patronymic-label form__label this__selectable_none">
+                    Отчество
+                </label>
+                <input class="panel__content_user_form_grid__user_patronymic-input form__input-type-text "
+                       value="<?=$user_patronymic?>" type="text" name="user_patronymic">
+
+                <label class="panel__content_user_form_grid__user_description-label form__label this__selectable_none">
+                    Описание
+                </label>
+                <input class="panel__content_user_form_grid__user_description-input form__input-type-text"
+                       value="<?=$user_description?>" type="text" name="user_description">
+            </div>
+
+        </div>
+        <div class="panel__content_user_form_bottom_menu">
+            <?php
 // Нижнее меню панели.
 $panelBottomMenuArray[0] =  ['panel__button panel__button-left','index.php?page=admin&section=users', 'Назад'];
 $panelBottomMenuArray[1] =  ['submit_href panel__button panel__button-left','', $buttonText];
 echo HTML::ShowMenu($panelBottomMenuArray);
 ?>
-</div>
-</div>
+        </div>
+    </div>
 </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

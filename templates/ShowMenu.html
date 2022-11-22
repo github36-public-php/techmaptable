@@ -1,19 +1,19 @@
 <div class="menu">
 <?php
 if ($templateArgumentsArray[0]!=null)
-{
+ {
 foreach ($templateArgumentsArray[0] as $MenuLink)
-{
-$linkClass = $MenuLink[0];
-$linkHref = $MenuLink[1];
-$linkText= $MenuLink[2];
-$linkCode = $MenuLink[3];
-$linkVisibility = $MenuLink[4];
-$linkHref = 'href="'.$linkHref.'"';
-$linkClass ='class="menu-link this__selectable_none '.$linkClass.'"';
-if ($linkVisibility != 'invisible') echo "<a $linkHref $linkClass $dataLoadAddress $linkCode>$linkText</a>";
-}
-}
+  {
+    $linkClass = $MenuLink[0];
+    $linkHref = $MenuLink[1];
+    $linkText= $MenuLink[2];
+    $linkCode = $MenuLink[3];
+    $linkVisibility = $MenuLink[4];
+    $linkHref = 'href="'.$linkHref.'"';
+    $linkClass ='class="menu-link this__selectable_none '.$linkClass.'"';
+    if ($linkVisibility != 'invisible') echo "<a $linkHref $linkClass $dataLoadAddress $linkCode>$linkText</a>";
+  }
+ }
 ?>
 <?=$templateArgumentsArray[1]?>
 </div>

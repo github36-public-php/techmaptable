@@ -41,39 +41,46 @@ $UsersIdArray = explode(",", $users_id);
 ?>
 
 
-
 <form action="<?=$formAction?>" method="POST">
-<div class="panel__content_address_form">
-<div class="panel__content_address_form_content">
+    <div class="panel__content_address_form">
+        <div class="panel__content_address_form_content">
 
 
-<div class="panel__content_address_form_grid">
-<div class="panel__content_address_form_grid__header form__header">
-<?=$formTitle?>
-</div>
+            <div class="panel__content_address_form_grid">
+                <div class="panel__content_address_form_grid__header form__header">
+                    <?=$formTitle?>
+                </div>
 
-<input value="<?=$id?>" type="hidden" name="id">
+                <input value="<?=$id?>" type="hidden" name="id">
 
-<label class="panel__content_address_form_grid__address-label form__label this__selectable_none">
-Адрес
-</label>
-<input class="panel__content_address_form_grid__address-input form__input-type-text" value="<?=$field1?>" type="text" name="field1">
+                <label class="panel__content_address_form_grid__address-label form__label this__selectable_none">
+                    Адрес
+                </label>
+                <input class="panel__content_address_form_grid__address-input form__input-type-text"
+                       value="<?=$field1?>" type="text" name="field1">
 
 
-<div class="panel__content_address_form_grid__user_list_header form__header">
-Список пользователей имеющих полный доступ к данному адресу (администраторы имеют доступ ко всем адресам)
-</div>
+                <div class="panel__content_address_form_grid__user_list_header form__header">
+                    Список пользователей имеющих полный доступ к данному адресу (администраторы имеют доступ ко всем
+                    адресам)
+                </div>
 
-<div class="panel__content_address_form_grid__user_list_list">
+                <div class="panel__content_address_form_grid__user_list_list">
 
-<table class="user_list_table">
-<thead>
-<tr>
-<th>Логин</th><th>Роль</th><th>Фамилия</th><th>Имя</th><th>Отчество</th><th>Описание</th><th>Доступ</th>
-</tr>
-</thead>
-<tbody>
-<?php
+                    <table class="user_list_table">
+                        <thead>
+                        <tr>
+                            <th>Логин</th>
+                            <th>Роль</th>
+                            <th>Фамилия</th>
+                            <th>Имя</th>
+                            <th>Отчество</th>
+                            <th>Описание</th>
+                            <th>Доступ</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
 $UserListArray = User::GetUserList();
 if ($UserListArray != 'no_data')
 {
@@ -98,32 +105,38 @@ if ($id == $UsersIdElement) {$checkbox_checked='checked'; break;}
 }
 }
 
-if ($user_role != 'Администратор') echo '<tr><td>'.$login.'</td><td>'.$user_role.'</td><td>'.$user_surname.'</td><td>'.$user_name.'</td><td>'.$user_patronymic.'</td><td>'.$user_description.'</td>
-<td class="action" align="center">
-<input type="checkbox" name="users_id[]"  value="'.$id.'" '.$checkbox_checked.'>
-</td></tr>';
+if ($user_role != 'Администратор') echo '<tr>
+                        <td>'.$login.'</td>
+                        <td>'.$user_role.'</td>
+                        <td>'.$user_surname.'</td>
+                        <td>'.$user_name.'</td>
+                        <td>'.$user_patronymic.'</td>
+                        <td>'.$user_description.'</td>
+                        <td class="action" align="center">
+                            <input type="checkbox" name="users_id[]" value="'.$id.'" '.$checkbox_checked.'>
+                        </td>
+                        </tr>';
 
 
-$i++;
-}
-}
-?>
-</tbody>
-</table>
+                        $i++;
+                        }
+                        }
+                        ?>
+                        </tbody>
+                    </table>
 
-</div>
+                </div>
 
 
-
-</div>
-</div>
-<div class="panel__content_address_form_bottom_menu">
-<?php
+            </div>
+        </div>
+        <div class="panel__content_address_form_bottom_menu">
+            <?php
 // Нижнее меню панели.
 $panelBottomMenuArray[0] =  ['panel__button panel__button-left','index.php?page=admin&section=address', 'Назад'];
 $panelBottomMenuArray[1] =  ['submit_href panel__button panel__button-left','', $buttonText];
 echo HTML::ShowMenu($panelBottomMenuArray);
 ?>
-</div>
-</div>
+        </div>
+    </div>
 </form>

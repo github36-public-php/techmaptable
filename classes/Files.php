@@ -1,11 +1,12 @@
 <?php
-include_once __DIR__.'/MySQL.php';
-include_once __DIR__.'/TechmapTable.php';
-include_once __DIR__.'/MySQL.php';
-include_once __DIR__.'/User.php';
-include_once __DIR__.'/Data.php';
+include_once __DIR__ . '/MySQL.php';
+include_once __DIR__ . '/TechmapTable.php';
+include_once __DIR__ . '/MySQL.php';
+include_once __DIR__ . '/User.php';
+include_once __DIR__ . '/Data.php';
 
-include_once __DIR__.'/../addons/SimpleXLSXGen.php';
+include_once __DIR__ . '/../addons/SimpleXLSXGen.php';
+
 class Files
 {
 
@@ -16,28 +17,28 @@ class Files
 
 
 // Экспорт данных в Excel. Метод получает массив из id строк в таблице и возвращает путь к excel файлу.
-static function excelExport($TechmapTableIdArray) {
-$TableDataArray = TechmapTable::getTechmapTableDataFromIds($TechmapTableIdArray);
-if ($TableDataArray ==NULL) return '';
-$UserDataArray = User::getAllUserDataBasedOnToken();
-$userId = $UserDataArray['id'];
+    static function excelExport($TechmapTableIdArray)
+    {
+        $TableDataArray = TechmapTable::getTechmapTableDataFromIds($TechmapTableIdArray);
+        if ($TableDataArray == NULL) return '';
+        $UserDataArray = User::getAllUserDataBasedOnToken();
+        $userId = $UserDataArray['id'];
 
 // Создаем пути к файлу и папке.
-$pathToUserFolder = __DIR__.'/../output_files/'.$userId;
-$pathToUserFile = $pathToUserFolder.'/excel_table.xlsx';
+        $pathToUserFolder = __DIR__ . '/../output_files/' . $userId;
+        $pathToUserFile = $pathToUserFolder . '/excel_table.xlsx';
 
 // Создаем папку если папка не существует.
-if (!file_exists($pathToUserFolder)) mkdir($pathToUserFolder, 0755);
+        if (!file_exists($pathToUserFolder)) mkdir($pathToUserFolder, 0755);
 
 // Удаляем первые 2 колонки из массива.
-$TableDataArray = Data::removeColumnsFromArray($TableDataArray, 2);
+        $TableDataArray = Data::removeColumnsFromArray($TableDataArray, 2);
 
-$xlsx = SimpleXLSXGen::fromArray( $TableDataArray );
-$xlsx->saveAs($pathToUserFile);
+        $xlsx = SimpleXLSXGen::fromArray($TableDataArray);
+        $xlsx->saveAs($pathToUserFile);
 
-$url ='/output_files/'.$userId.'/excel_table.xlsx';
-return  $url;
+        $url = '/output_files/' . $userId . '/excel_table.xlsx';
+        return $url;
+    }
+
 }
-
-}
-

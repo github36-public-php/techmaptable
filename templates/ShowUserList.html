@@ -1,13 +1,19 @@
 <div class="panel__content_user_list">
-<div class="panel__content_user_list_content">
-<table class="user_list_table">
-<thead>
-<tr>
-<th>Логин</th><th>Роль</th><th>Фамилия</th><th>Имя</th><th>Отчество</th><th>Описание</th><th>Действие</th>
-</tr>
-</thead>
-<tbody>
-<?php
+    <div class="panel__content_user_list_content">
+        <table class="user_list_table">
+            <thead>
+            <tr>
+                <th>Логин</th>
+                <th>Роль</th>
+                <th>Фамилия</th>
+                <th>Имя</th>
+                <th>Отчество</th>
+                <th>Описание</th>
+                <th>Действие</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
 $UserListArray = User::GetUserList();
 if ($UserListArray != 'no_data')
 {
@@ -21,27 +27,32 @@ $user_name = $UserListArray[$i]['user_name'];
 $user_surname = $UserListArray[$i]['user_surname'];
 $user_patronymic = $UserListArray[$i]['user_patronymic'];
 $user_description = $UserListArray[$i]['user_description'];
-echo '<tr><td>'.$login.'</td><td>'.$user_role.'</td><td>'.$user_surname.'</td><td>'.$user_name.'</td><td>'.$user_patronymic.'</td><td>'.$user_description.'</td>
-<td  class="action">
-<a href="index.php?page=admin&section=users_edit&id='.$id.'" class="table__link">Редактировать</a>&nbsp;&nbsp;
-<a href="actions.php?action=user_delete&id='.$id.'" class="confirm_user_delete_href table__link">Удалить</a>
-</td></tr>';
-$i++;
-}
-}
-?>
-</tbody>
-</table>
-</div>
+echo '<tr>
+            <td>'.$login.'</td>
+            <td>'.$user_role.'</td>
+            <td>'.$user_surname.'</td>
+            <td>'.$user_name.'</td>
+            <td>'.$user_patronymic.'</td>
+            <td>'.$user_description.'</td>
+            <td class="action">
+                <a href="index.php?page=admin&section=users_edit&id='.$id.'" class="table__link">Редактировать</a>&nbsp;&nbsp;
+                <a href="actions.php?action=user_delete&id='.$id.'"
+                   class="confirm_user_delete_href table__link">Удалить</a>
+            </td>
+            </tr>';
+            $i++;
+            }
+            }
+            ?>
+            </tbody>
+        </table>
+    </div>
 
-<div class="panel__content_user_list_bottom_menu">
-<?php
+    <div class="panel__content_user_list_bottom_menu">
+        <?php
 // Нижнее меню панели.
 $panelBottomMenuArray[0] =  ['panel__button panel__button-left','index.php?page=admin&section=users_add', 'Создать нового пользователя'];
 echo HTML::ShowMenu($panelBottomMenuArray);
 ?>
+    </div>
 </div>
-</div>
-
-
-

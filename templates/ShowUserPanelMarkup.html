@@ -5,12 +5,12 @@
 <?php
 $MenuArray=$templateArgumentsArray[1];
 foreach ($MenuArray as $MenuLink)
-{
-$linkClass = $MenuLink[0];
-$linkHref = $MenuLink[1];
-$linkText= $MenuLink[2];
-$linkVisibility = $MenuLink[3];
-if ($linkVisibility != 'invisible') echo '<a href="'.$linkHref.'" class="menu-link this__selectable_none '.$linkClass.'">'.$linkText.'</a>';
-}
+ {
+    $linkClass = $MenuLink[0];
+    $linkHref = $MenuLink[1];
+    $linkText= $MenuLink[2];
+    $linkVisibility = $MenuLink[3];
+    if ($linkVisibility != 'invisible') echo '<a href="'.$linkHref.'" class="menu-link this__selectable_none '.$linkClass.'">'.$linkText.'</a>';
+ }
 ?>
 </div>
