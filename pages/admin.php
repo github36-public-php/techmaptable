@@ -2,46 +2,42 @@
 
 namespace techmap\pages;
 
-include_once __DIR__.'/../vendor/autoload.php';
-use techmap\classes\Address;
+include_once __DIR__ . '/../vendor/autoload.php';
+
 use techmap\classes\Data;
-use techmap\classes\Files;
 use techmap\classes\HTML;
-use techmap\classes\MySQL;
 use techmap\classes\Security;
-use techmap\classes\Settings;
-use techmap\classes\TechmapTable;
-use techmap\classes\User;
+
 
 // Скрипт доступен только администраторам.
 Security::accessAdminOnly();
 
 // Получаем данные.
-$section=Data::getData('section');
+$section = Data::getData('section');
 
 // Верхнее меню панели.
-$panelTopMenuArray[0] =  ['menu-link_normal','index.php?page=admin&section=address', 'Адреса'];
-$panelTopMenuArray[1] =  ['menu-link_normal','index.php?page=admin&section=users', 'Пользователи'];
+$panelTopMenuArray[0] = ['menu-link_normal', 'index.php?page=admin&section=address', 'Адреса'];
+$panelTopMenuArray[1] = ['menu-link_normal', 'index.php?page=admin&section=users', 'Пользователи'];
 // Изменение стиля ссылок меню.
 
 // Изменение пунктов меню.
-$sectionSymbolPosition = strpos($section,'_');
+$sectionSymbolPosition = strpos($section, '_');
 if ($sectionSymbolPosition == 0) $sectionSymbolPosition = strlen($section);
 $sectionPartOfString = substr($section, 0, $sectionSymbolPosition);
-switch ($sectionPartOfString)
-{
-case 'address': $panelTopMenuArray[0][0] = 'menu-link_active'; break;
-case 'users': $panelTopMenuArray[1][0] = 'menu-link_active'; break;
+switch ($sectionPartOfString) {
+    case 'address':
+        $panelTopMenuArray[0][0] = 'menu-link_active';
+        break;
+    case 'users':
+        $panelTopMenuArray[1][0] = 'menu-link_active';
+        break;
 }
 
 // Поле поиска для пользователей
 //$panelTopMenuCode = HTML::ShowMenuFindForm('users','panel__content');
 
 
-$panelTopMenu=HTML::ShowMenu($panelTopMenuArray, $panelTopMenuCode);
-
-
-
+$panelTopMenu = HTML::ShowMenu($panelTopMenuArray, $panelTopMenuCode);
 
 
 // АДРЕСА.
@@ -54,7 +50,6 @@ if ($section == 'address_edit') $panelСontent = HTML::showAddressForm(''); // �
 // Удалить адрес - формы нет т.к. после js подтверждения сразу выполняется удаление.
 
 
-
 // ПОЛЬЗОВАТЕЛИ.
 // Список пользователей.
 if ($section == 'users') $panelСontent = HTML::showUserList();
@@ -65,7 +60,6 @@ if ($section == 'users_edit') $panelСontent = HTML::showUserForm(''); // Дей
 // Удалить пользователя - формы нет т.к. после js подтверждения сразу выполняется удаление.
 
 
-
 // Рендеринг панели.
-echo HTML::showPanelMarkup('',$panelTopMenu, $panelСontent, $panelBottomMenu);
+echo HTML::showPanelMarkup('', $panelTopMenu, $panelСontent, $panelBottomMenu);
 ?>

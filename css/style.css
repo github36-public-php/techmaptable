@@ -545,3 +545,6 @@ a.table__link:hover {
     height: 26px;
     width: 300px;
   }
+  .checkbox_cell{
+    text-align: center;
+  }
